@@ -1,0 +1,16 @@
+* {
+  margin: 0em;
+  padding: 0em;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.a-enter-vr .a-enter-vr-button {
+  background: red;
+  border-radius: 0%;
+}
+/*# sourceMappingURL=Style.css.map */
