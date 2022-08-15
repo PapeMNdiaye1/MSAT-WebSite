@@ -9,64 +9,151 @@
     <!-- <script rel="stylesheet" href="/Style/Style.css"></script> -->
     <link rel="stylesheet" href="/Style/Style.css">
 
-
     <!-- <title>360° Image Browser</title> -->
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-
-
     <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
-    <script
-        src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.jss"></script>
-
 
 </head>
 
 <body>
-    <a-scene>
-        <a-assets>
-            <!-- <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio> -->
+    <a-scene cursor="rayOrigin: mouse"
+        inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+        <a-assets
+            inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+            <a-box log="Hello, Box!"></a-box>
 
-            <!-- Images. -->
-            <img id="city" src="./Style/Images/Image0000.png">
-            <img id="city-thumb" src="./Style/Images/PNG/Arrow-1.png">
+            <img id="Scene-1" src="./Style/Images/Scene-1.png">
+            <img id="Scene-2" src="./Style/Images/Scene-2.png">
+            <img id="Scene-3" src="./Style/Images/Scene-3.png">
+            <img id="Scene-4" src="./Style/Images/Scene-4.png">
+            <img id="Scene-5" src="./Style/Images/Scene-5.png">
 
-            <img id="cubes" src="./Style/Images/Image0019.png">
-            <img id="cubes-thumb" src="./Style/Images/Image0050.png">
+            <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
+            <img id="Arrow-2" src="./Style/Images/PNG/Arrow-2.png">
+            <img id="Arrow-3" src="./Style/Images/PNG/Arrow-3.png">
+            <img id="Arrow-4" src="./Style/Images/PNG/Arrow-4.png">
 
-            <img id="sechelt" src="./Style/Images/Image0061.png">
-            <img id="sechelt-thumb" src="./Style/Images/Image0061.png">
         </a-assets>
 
-        <!-- Camera + Cursor. -->
-        <a-camera>
-        </a-camera>
+        <!-- VR-controls -->
+        <!-- <a-entity laser-controls="hand: left"
+            raycaster="objects: [data-clickable]; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
+        <a-entity laser-controls="hand: right"
+            raycaster="objects: [data-clickable]; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity> -->
+
+
 
         <!-- 360-degree image-Init -->
-        <a-sky id="image-360" radius="30" src="#city"
+        <!-- <a-sky id="image-360" radius="20" src="#Scene-1" -->
+        <a-sky id="image-360" radius="20" src="#Scene-2"
             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
         </a-sky>
 
+        <!-- Group-1. -->
+        <a-entity class="groups" id="Group-1" visible="false">
 
-        <!-- Link template we will build. -->
-        <a-entity id="links" layout="type: line; margin: 1.5" position="-5 -1 -4">
-            <a-entity template="src: #plane" data-src="#city" data-thumb="#city-thumb"></a-entity>
-            <a-entity template="src: #plane" data-src="#cubes" data-thumb="#cubes-thumb" position="-223 -1 -4"
-                rotation="0 60 0"></a-entity>
-            <a-entity template="src: #plane" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
+            <a-entity class="Dote" template="src: #plane" data-src="#Scene-2" data-thumb="#Arrow-4" position="0 0 6"
+                rotation="-151.5 8.6 173" the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2"
+                material="src: ./Style/Images/PNG/Arrow-1.png ">
+            </a-entity>
+
+            <a-entity class="Dote" template="src: #plane" data-src="#Scene-3" data-thumb="#Arrow-4" position="-0 0 -6"
+                the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
+            </a-entity>
+
+            <a-entity class="Dote" template="src: #plane" data-src="#Scene-4" data-thumb="#Arrow-4"
+                position="5.7 -1 -2.4" rotation="-70.2 0 0" the_dote="Name_of_dote: Dote-4">
+            </a-entity>
+
+            <a-entity class="Dote" template="src: #plane" data-src="#Scene-5" data-thumb="#Arrow-4"
+                position="5.7 -1 2.4" rotation="-64.3 -145 -11.6" the_dote="Name_of_dote: Dote-5">
+            </a-entity>
+
         </a-entity>
+
+        <!-- Group-2. -->
+        <a-entity class="groups" id="Group-2">
+
+            <a-entity class="Dote" template="src: #plane" data-src="#Scene-1" data-thumb="#Arrow-3" position="4.2 -1 -4"
+                rotation="-50 -55 0" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1" ">
+            </a-entity>
+
+            <a-entity class=" Dote" template="src: #plane" data-src="#Scene-3" data-thumb="#Arrow-3"
+                position="1.2 -1 -9" rotation="-50 0 0" the_dote="Name_of_dote: Dote-3 Group_to_activate: Group-3">
+            </a-entity>
+
+        </a-entity>
+
+        <!-- Group-3 -->
+        <a-entity class="groups" id="Group-3" visible="false">
+
+            <a-entity class="Dote" template="src: #plane" data-src="#Scene-2" data-thumb="#Arrow-1" position="0 0 2"
+                rotation="-151.5 8.6 173" the_dote="Name_of_dote: Dote-2 "
+                material="src: ./Style/Images/PNG/Arrow-1.png ">
+            </a-entity>
+
+            <a-entity class="Dote" template="src: #plane" data-src="#Scene-3" data-thumb="#Arrow-3" position="-0 0 -2"
+                the_dote="Name_of_dote: Dote-3 ">
+            </a-entity>
+
+        </a-entity>
+
 
     </a-scene>
 
     <!-- Link template interactions scrtipt. -->
+    <script>
+
+        let groups = document.querySelectorAll('.groups')
+        console.log(groups);
+
+        AFRAME.registerComponent('the_dote', {
+            //The schema is the container for all the propertises
+            schema: { Name_of_dote: { type: 'string', default: '#Name', }, Group_to_activate: { type: 'string', default: '#Position', } },
+            //!Run permanatli
+            // tick: function () {
+            // },
+            //Run Ones  
+            init: function () {
+                //get whats in the entity
+                var stringToLog = this.data;
+                let Dote_Name = this.data.Name_of_dote
+                let Group_to_activate = this.data.Group_to_activate
+
+
+                this.el.addEventListener('click', (theDote) => {
+                    console.log('####################');
+                    // console.log(Group_to_activate);
+                    // let oldPosition = theDote.srcElement.getAttribute('position')
+                    // console.log(`click ${Dote_Name}`);
+                    // console.log(the_to_group_to_activate);
+
+                    groups.forEach(group => {
+                        group.setAttribute('visible', 'false')
+                    });
+
+                    let the_to_group_to_activate = document.querySelector(`#${Group_to_activate}`)
+                    console.log(the_to_group_to_activate);
+                    the_to_group_to_activate.setAttribute('visible', 'true')
+                    console.log('####################');
+                    // console.log(oldPosition );
+                    // let oldPosition = theDote.sre
+                    // theDote.srcElement.setAttribute('position' , '0 0 -4') 
+
+                });
+            }
+        });
+
+    </script>
     <script id="plane" type="text/html">
-        <a-entity class="link" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: ${thumb}"
-            sound="on: click; src: #click-sound" event-set__mouseenter="scale: 1.2 1.2 1"
-            event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: ${src}">
-        </a-entity>
-        </script>
+    <a-entity class="link" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: ${thumb}"
+        sound="on: click; src: #click-sound" event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: ${src}">
+    </a-entity>
+    </script>
 </body>
 
 </html>
