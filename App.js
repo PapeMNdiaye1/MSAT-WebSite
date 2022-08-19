@@ -1,255 +1,88 @@
-const Container = document.querySelector("#TheContainer")
-// const Container = document.body
-//Creat Scene
-const scene = new THREE.Scene();
-//Creat a TextureLoader for All texturs 
-const textureLoader = new THREE.TextureLoader();
-//Creat Renderer params
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(Container.offsetWidth, Container.offsetHeight);
-//Insertion Renderer in le DOM
-Container.appendChild(renderer.domElement);
 
+let groups = document.querySelectorAll('.groups')
+console.log(groups);
 
+AFRAME.registerComponent('the_dote', {
+    //The schema is the container for all the propertises
+    schema: { Name_of_dote: { type: 'string', default: '#Name', }, Group_to_activate: { type: 'string', default: '#Position', } },
+    //!Run permanatli
+    // tick: function () {
+    // },
+    //Run Ones
 
-//?###########################################
-function onResize() {
-    renderer.setSize(Container.offsetWidth, Container.offsetHeight)
-    //Change camera lenth aspect
-    camera.aspect = Container.offsetWidth / Container.offsetHeight
-    //update Projection Matrix if camera setings change
-    camera.updateProjectionMatrix()
-}
-Container.addEventListener('resize', onResize)
-//?###########################################
+    init: function () {
+        //get whats in the entity
+        var stringToLog = this.data;
+        let Dote_Name = this.data.Name_of_dote
+        let Group_to_activate = this.data.Group_to_activate
 
-//Creat SphereGeometry(radius : Float, widthSegments : Integer, heightSegments : Integer, phiStart : Float, phiLength : Float, thetaStart : Float, thetaLength : Float)
-const geometry = new THREE.SphereGeometry(50, 60, 60);
-//Creat a TextureLoader for All texturs 
-let sphereTextur1 = textureLoader.load('./Style/Images/Image0000.png');
-//Invert textur
-sphereTextur1.wrapS = THREE.RepeatWrapping
-sphereTextur1.repeat.x = -1
-// immediately use the texture for sphereMaterial
-let sphereMaterial = new THREE.MeshBasicMaterial({ map: sphereTextur1, side: THREE.DoubleSide });
-//Set Material To SphereMaterial and add it to scene
-let sphere = new THREE.Mesh(geometry, sphereMaterial);
-sphere.name = 'theSphere';
-scene.add(sphere);
+        this.el.addEventListener('click', (theDote) => {
+            console.log('####################');
+            // console.log(Group_to_activate);
+            // let oldPosition = theDote.srcElement.getAttribute('position')
+            // console.log(`click ${Dote_Name}`);
+            // console.log(the_to_group_to_activate);
+            groups.forEach(group => {
+                group.setAttribute('visible', 'false')
+            });
 
-
-function CreatNewTexturForSphere(image, persp) {
-    sphereTextur1 = textureLoader.load(image);
-    sphereTextur1.wrapS = THREE.RepeatWrapping
-    sphereTextur1.repeat.x = -1
-
-    sphereMaterial.map = sphereTextur1
-    sphereMaterial.map.needsUpdate = true
-
-
-    scene.traverse(function (object) {
-        if (object.isSprite) {
-            object.visible = false;
-        }
-    });
-
-
-    switch (persp) {
-
-        case 1:
-            Sprite1.visible = true
-            Sprite2.visible = true
-            break;
-        case 2:
-            Sprite3.visible = true
-            Sprite4.visible = true
-            Sprite5.visible = true
-            break;
-        case 3:
-
-            Sprite6.visible = true
-            Sprite7.visible = true
-            break;
-        case 4:
-
-            Sprite8.visible = true
-            Sprite9.visible = true
-            Sprite10.visible = true
-            break;
-
+            let the_to_group_to_activate = document.querySelector(`#${Group_to_activate}`)
+            console.log(the_to_group_to_activate);
+            the_to_group_to_activate.setAttribute('visible', 'true')
+            console.log('####################');
+            // console.log(oldPosition );
+            // let oldPosition = theDote.sre
+            // theDote.srcElement.setAttribute('position' , '0 0 -4') 
+        });
     }
+});
 
-}
+//###############################################################
+//###############################################################
+//Run Ones
+let the_crad_container = document.querySelector('#the_crad_container')
+let the_close_crad = document.querySelector('#close_crad')
 
+let the_art_title = document.querySelector('#art_title')
+let the_art_author = document.querySelector('#art_author')
+let the_art_price = document.querySelector('#the_art_price')
+let the_art_size = document.querySelector('#the_art_size')
+let the_art_picture = document.querySelector('#the_art_picture').childNodes[1]
+console.log(the_art_picture);
+the_close_crad.addEventListener('click', function () {
+    the_crad_container.style.display = 'none'
+});
 
+AFRAME.registerComponent('the_pintings', {
+    schema: {
+        Pinting_Name: { type: "string", default: "" },
+        Pinting_Picture: { type: "string", default: "" },
+        Autor_Name: { type: "string", default: "" },
+        Size: { type: "string", default: "" },
+        Price: { type: "string", default: "" }
+    },
+    init: function () {
+        this.el.setAttribute("opacity", "0");
+        console.log(this.data);
+        var The_Name = this.data.Pinting_Name;
+        var The_Author = this.data.Autor_Name;
+        var The_Price = this.data.Price;
+        var The_Size = this.data.Size;
+        var The_Picture = this.data.Pinting_Picture;
+        //  material = 'opacity:0'
+        this.el.addEventListener('click', function () {
+            console.log(The_Picture);
+            // console.log(The_Name);
+            the_art_title.innerHTML = The_Name
+            the_art_author.innerHTML = `par:${The_Author}`
+            the_art_price.innerHTML = The_Price
+            the_art_size.innerHTML = The_Size
+            the_crad_container.style.display = 'flex'
 
-
-
-
-//?###########################################
-//Creat Camera
-const camera = new THREE.PerspectiveCamera(60, Container.offsetWidth / Container.offsetHeight, 0.1, 1000);
-//Creat Controls for the Camera
-const controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.rotateSpeed = 0.2;
-controls.enableZoom = false
-//*controls.autorotata = true
-//Set Camera positions
-camera.position.set(-1, 0, 0);
-// camera.position.set(200, 0, 0);
-
-controls.update();
-
-function animate() {
-    requestAnimationFrame(animate);
-    // required if controls.enableDamping or controls.autoRotate are set to true
-    controls.update();
-    renderer.render(scene, camera);
-}
-animate()
-
-//?###########################################
-
-function addSprite(theSpriteposition, theSpriteName, TheIcon) {
-    // console.log(theSpriteposition);
-    const spriteTextur = textureLoader.load(TheIcon);
-    let spritematerial = new THREE.SpriteMaterial({ map: spriteTextur });
-    let sprite = new THREE.Sprite(spritematerial);
-    sprite.position.copy(theSpriteposition.clone().normalize().multiplyScalar(20));
-    // sprite.scale.multiplyScalar(30);
-    sprite.name = theSpriteName;
-    scene.add(sprite);
-
-    return sprite
-
-}
-
-
-//?###########################################
-//! Add sprite a and Get it position on click
-// function onClick(e) {
-//     let mouseClickPosition = new THREE.Vector2(
-//         (e.clientX / window.innerWidth) * 2 - 1,
-//         - (e.clientY / window.innerHeight) * 2 + 1
-//     )
-
-//     let rayCaster = new THREE.Raycaster()
-//     //the ray go from camera to mouseClickPosition
-//     rayCaster.setFromCamera(mouseClickPosition, camera)
-//     //get position where the Ray toutch Sphere
-//     let intersectsWhitSphere = rayCaster.intersectObject(sphere)
-//     if (intersectsWhitSphere.length > 0) {
-//         // addSprite(intersectsWhitSphere[0].point)
-//         addSprite(intersectsWhitSphere[0].point, "Sprite", "./Style/Images/PNG/Dot.png")
-//     }
-
-// }
-// Container.addEventListener('click', onClick)
-
-//! Get info on sprite Ckil a and Get it position on click
-function onClickOnSprite(e) {
-
-    console.log(e);
-    let mouseClickPosition = new THREE.Vector2(
-        (e.clientX / Container.offsetWidth) * 2 - 1,
-        - (e.clientY / Container.offsetHeight) * 2 + 1
-    )
-
-    //get position whene Ray toutch object
-    let rayCaster = new THREE.Raycaster()
-    //the ray go from camera to mouseClickPosition
-    rayCaster.setFromCamera(mouseClickPosition, camera)
-    //get position whene Ray toutch Sphere
-    let intersects = rayCaster.intersectObjects(scene.children)
-    // console.log(intersects);
-
-    let allSprites = []
-    scene.traverse(function (object) {
-        if (object.isSprite) {
-            allSprites.push(object)
-        }
-    });
-    // console.log(allSprites);
-
-    // console.log('OK');
-
-
-    if (intersects.length > 0) {
-        intersects.forEach(obj => {
-            if (obj.object.type == "Sprite") {
-                switch (obj.object.name) {
-                    case "Sprite-1":
-                        CreatNewTexturForSphere("./Style/Images/Image0061.png", 2)
-                        break;
-                    case "Sprite-2":
-                        CreatNewTexturForSphere('./Style/Images/Image0050.png', 3)
-                        break;
-                    case "Sprite-3":
-                        CreatNewTexturForSphere('./Style/Images/Image0019.png', 4)
-                        break;
-                    case "Sprite-4":
-                        CreatNewTexturForSphere('./Style/Images/Image0000.png', 1)
-                        break;
-                    case "Sprite-5":
-                        CreatNewTexturForSphere('./Style/Images/Image0050.png', 3)
-                        break;
-                    case "Sprite-6":
-                        CreatNewTexturForSphere('./Style/Images/Image0019.png', 4)
-                        break;
-                    case "Sprite-7":
-                        CreatNewTexturForSphere('./Style/Images/Image0000.png', 1)
-                        break;
-                    case "Sprite-8":
-                        CreatNewTexturForSphere('./Style/Images/Image0000.png', 1)
-                        break;
-                    case "Sprite-9":
-                        CreatNewTexturForSphere('./Style/Images/Image0061.png', 2)
-                        break;
-                    case "Sprite-10":
-                        CreatNewTexturForSphere('./Style/Images/Image0050.png', 3)
-                        break;
-                }
-
-            }
+            the_art_picture.setAttribute("src", `${The_Picture}`)
+            // the_art_picture.style.backgroundImage = `url('./Images/Tableaux/cinquantenaire.jpg')`
+            // console.log(the_art_picture.style);
 
         });
     }
-
-}
-Container.addEventListener('click', onClickOnSprite)
-
-//!Persiste a AddSprite by adding It manualy
-
-
-
-let sprite1Position = new THREE.Vector3(34.26187788539659, -17.649877165322742, 31.79604847767142);
-let sprite2Position = new THREE.Vector3(49.59451582564034, 5.283809768739051, 2.3664972312950363);
-let Sprite1 = addSprite(sprite1Position, "Sprite-1", './Style/Images/PNG/Arrow-1.png')
-let Sprite2 = addSprite(sprite2Position, "Sprite-2", './Style/Images/PNG/Arrow-1.png')
-
-let sprite3Position = new THREE.Vector3(25.82348973489126, -13.985765702370303, 40.36931604496714);
-let sprite4Position = new THREE.Vector3(35.14013018078072, -27.42934668449403, -22.52792763332754);
-let sprite5Position = new THREE.Vector3(-20.467134881477946, 2.536835418608698, 45.536427258306574);
-let Sprite3 = addSprite(sprite3Position, "Sprite-3", './Style/Images/PNG/Arrow-1.png')
-let Sprite4 = addSprite(sprite4Position, "Sprite-4", './Style/Images/PNG/Arrow-1.png')
-let Sprite5 = addSprite(sprite5Position, "Sprite-5", './Style/Images/PNG/Arrow-1.png')
-Sprite3.visible = false
-Sprite4.visible = false
-Sprite5.visible = false
-
-let sprite6Position = new THREE.Vector3(42.402006966681824, -19.09807193619093, 18.253303169955387);
-let sprite7Position = new THREE.Vector3(22.67620119010866, -11.193139859034932, -43.046105111070105);
-let Sprite6 = addSprite(sprite6Position, "Sprite-6", './Style/Images/PNG/Arrow-1.png')
-let Sprite7 = addSprite(sprite7Position, "Sprite-7", './Style/Images/PNG/Arrow-1.png')
-Sprite6.visible = false
-Sprite7.visible = false
-
-let sprite8Position = new THREE.Vector3(12.23026642168882, -20.970033684614197, -43.634448533051135);
-let sprite9Position = new THREE.Vector3(-21.351842931384255, -20.020107370852752, -40.46227558340001);
-let sprite10Position = new THREE.Vector3(-46.302936005922504, -10.297594676898232, -15.712835289577667);
-let Sprite8 = addSprite(sprite8Position, "Sprite-8", './Style/Images/PNG/Arrow-1.png')
-let Sprite9 = addSprite(sprite9Position, "Sprite-9", './Style/Images/PNG/Arrow-1.png')
-let Sprite10 = addSprite(sprite10Position, "Sprite-10", './Style/Images/PNG/Arrow-1.png')
-Sprite8.visible = false
-Sprite9.visible = false
-Sprite10.visible = false
+});

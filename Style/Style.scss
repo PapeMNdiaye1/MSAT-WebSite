@@ -1,25 +1,128 @@
 * {
     margin: 0em;
     padding: 0em;
-    // margin: 0%;
-    // padding: 0%;
 }
 
 
 body,
 html {
-    // background-color: aqua;
     width: 100%;
     height: 100%;
-    // color: aqua;
+    font-family: 'Roboto', sans-serif;
+}
 
+#the_crad_container {
+    position: absolute;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    z-index: 22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+    // display: block;
+
+    #the_crad {
+        background: #f1f1f1;
+        width: 50em;
+        height: 30em;
+        border-radius: .5em;
+        padding: .1em;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 2em;
+        grid-template-rows: repeat(5, 2em) 1fr repeat(2, 2em);
+
+        #art_title {
+            // grid-column: 3;
+            grid-column: 3 / 5;
+            grid-row: 3;
+            // margin: auto;
+            font-size: 1.4em;
+        }
+
+        #art_author {
+            grid-column: 3 / 5;
+            grid-row: 4;
+            // margin: auto;
+            // margin: .5em 5emd auto auto;
+            font-size: 1em;
+        }
+
+        #the_art_picture {
+            grid-column: 1 / 3;
+            grid-row: 2 / 8;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // background-color: aqua;
+
+
+            background-image: url('./Images/Tableaux/guis\ guis.jpg');
+
+            // background-size: contain;
+            // background-repeat: no-repeat;
+            // background-position: center;
+            img {
+                border-radius: .2em;
+            }
+        }
+
+
+        #the_art_size {
+            // grid-column: 3;
+            grid-column: 3 / 5;
+            grid-row: 5;
+            margin: auto .5 auto auto;
+        }
+
+        #the_art_price {
+            grid-column: 3 / 5;
+            grid-row: 7;
+            margin: auto;
+            // font-size: .8em;
+
+
+        }
+
+        #close_crad {
+            grid-column: 4;
+            // background-color: aqua;
+            width: 1.5em;
+            height: 1.5em;
+            background-image: url(./Images/PNG/close-outline.svg);
+            background-size: 100%;
+            background-position: center;
+            margin: auto;
+        }
+    }
 }
 
 .a-enter-vr {
+    background: rgba(55, 55, 60, 0);
 
     .a-enter-vr-button {
-        background: red;
+        background: rgba(55, 55, 60, 0);
         border-radius: 0%;
+        background-image: url('./Images/PNG/VR-icon.png');
+        background-size: 90%;
+        background-position: center;
+        transform: scale(1);
+        filter: invert(100%);
 
+        &:hover {
+            background-image: url('./Images/PNG/VR-icon.png');
+            transform: scale(1.1);
+        }
     }
+
+    &:hover {
+        background: rgba(55, 55, 60, 0);
+        //     background-image: url('./Images/PNG/VR-icon.png');
+        //     transform: scale(1.1);
+    }
+
 }

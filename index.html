@@ -8,7 +8,9 @@
     <title>Document</title>
     <!-- <script rel="stylesheet" href="/Style/Style.css"></script> -->
     <link rel="stylesheet" href="/Style/Style.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <!-- <title>360° Image Browser</title> -->
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
@@ -18,22 +20,193 @@
 </head>
 
 <body>
+    <style>
+        * {
+            margin: 0em;
+            padding: 0em;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #the_crad_container {
+            position: absolute;
+            margin: auto;
+            width: 100vw;
+            height: 100vh;
+            z-index: 22;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            display: none;
+        }
+
+        #the_crad_container #the_crad {
+            background: #f1f1f1;
+            width: 50em;
+            height: 30em;
+            border-radius: .5em;
+            padding: .1em;
+            display: -ms-grid;
+            display: grid;
+            /* -ms-grid-columns: (1fr)[3] 2em; */
+            grid-template-columns: repeat(3, 1fr) 2em;
+            /* -ms-grid-rows: (2em)[5] 1fr (2em)[2]; */
+            grid-template-rows: repeat(5, 2em) 1fr repeat(2, 2em);
+        }
+
+        #the_crad_container #the_crad #art_title {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 2;
+            grid-column: 3 / 5;
+            -ms-grid-row: 3;
+            grid-row: 3;
+            font-size: 1.4em;
+        }
+
+        #the_crad_container #the_crad #art_author {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 2;
+            grid-column: 3 / 5;
+            -ms-grid-row: 4;
+            grid-row: 4;
+            font-size: 1em;
+        }
+
+        #the_crad_container #the_crad #the_art_picture {
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 2;
+            grid-column: 1 / 3;
+            -ms-grid-row: 2;
+            -ms-grid-row-span: 6;
+            grid-row: 2 / 8;
+            width: 100%;
+            height: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            /* background-image: url("./Images/Tableaux/guis guis.jpg"); */
+        }
+
+        #the_crad_container #the_crad #the_art_picture img {
+            border-radius: .2em;
+        }
+
+        #the_crad_container #the_crad #the_art_size {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 2;
+            grid-column: 3 / 5;
+            -ms-grid-row: 5;
+            grid-row: 5;
+            margin: auto .5 auto auto;
+        }
+
+        #the_crad_container #the_crad #the_art_price {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 2;
+            grid-column: 3 / 5;
+            -ms-grid-row: 7;
+            grid-row: 7;
+            margin: auto;
+        }
+
+        #the_crad_container #the_crad #close_crad {
+            -ms-grid-column: 4;
+            grid-column: 4;
+            width: 1.5em;
+            height: 1.5em;
+            background-image: url("Style/Images/PNG/close-outline.svg");
+            background-size: 100%;
+            background-position: center;
+            margin: auto;
+        }
+
+        .a-enter-vr {
+            background: rgba(55, 55, 60, 0);
+        }
+
+        .a-enter-vr .a-enter-vr-button {
+            background: rgba(55, 55, 60, 0);
+            border-radius: 0%;
+            background-image: url("./Style/Images/PNG/VR-icon.png");
+            background-size: 90%;
+            background-position: center;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-filter: invert(100%);
+            filter: invert(100%);
+        }
+
+        .a-enter-vr .a-enter-vr-button:hover {
+            background-image: url("./Style/Images/PNG/VR-icon.png");
+            /* background-image: url("./Style/Images/PNG/VR-icon.png"); */
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        .a-enter-vr:hover {
+            background: rgba(55, 55, 60, 0);
+        }
+
+        /*# sourceMappingURL=Style.css.map */
+    </style>
+    <div id="the_crad_container">
+        <div id="the_crad">
+            <div id="art_title">
+                TEFESS
+            </div>
+            <div id='art_author'>
+                Par: Mamadou Gaye
+            </div>
+            <div id="the_art_price">
+                4.875 000 francs (7500 €)
+            </div>
+            <div id="the_art_size">
+                Dimension: 2.04/1.84
+            </div>
+
+            <div id="the_art_picture">
+                <img src="./Style/Images/Tableaux/cinquantenaire.jpg" width='90%' alt="Nimp">
+            </div>
+            <div id="close_crad">
+            </div>
+        </div>
+
+    </div>
     <a-scene cursor="rayOrigin: mouse"
         inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
         <a-assets
             inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
             <a-box log="Hello, Box!"></a-box>
 
-            <img id="Scene-1" src="./Style/Images/Scene-1.png">
-            <img id="Scene-2" src="./Style/Images/Scene-2.png">
-            <img id="Scene-3" src="./Style/Images/Scene-3.png">
-            <img id="Scene-4" src="./Style/Images/Scene-4.png">
-            <img id="Scene-5" src="./Style/Images/Scene-5.png">
+            <img id="Scene-1" src="./Style/Images/Scene-1.jpg">
+            <img id="Scene-2" src="./Style/Images/Scene-2.jpg">
+            <img id="Scene-3" src="./Style/Images/Scene-3.jpg">
+            <img id="Scene-4" src="./Style/Images/Scene-4.jpg">
+            <img id="Scene-5" src="./Style/Images/Scene-5.jpg">
 
             <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
             <img id="Arrow-2" src="./Style/Images/PNG/Arrow-2.png">
             <img id="Arrow-3" src="./Style/Images/PNG/Arrow-3.png">
             <img id="Arrow-4" src="./Style/Images/PNG/Arrow-4.png">
+            <!-- <img id="Arrow-4" src="./Style/Images/Tableaux/guis-guis.jpg"> -->
+            <!-- <img id="Arrow-4" src=""> -->
 
         </a-assets>
 
@@ -43,45 +216,45 @@
         <a-entity laser-controls="hand: right"
             raycaster="objects: [data-clickable]; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity> -->
 
-
-
-        <!-- 360-degree image-Init -->
-        <!-- <a-sky id="image-360" radius="20" src="#Scene-1" -->
-        <a-sky id="image-360" radius="20" src="#Scene-2"
+        <a-sky id="image-360" radius="500" src="#Scene-1"
             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
         </a-sky>
+        <!-- ############################################################ -->
+        <!-- ############################################################ -->
+        <!-- ############################################################ -->
 
         <!-- Group-1. -->
-        <a-entity class="groups" id="Group-1" visible="false">
+        <a-entity class="groups" id="Group-1">
 
-            <a-entity class="Dote" template="src: #plane" data-src="#Scene-2" data-thumb="#Arrow-4" position="0 0 6"
-                rotation="-151.5 8.6 173" the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2"
+            <a-entity scale="0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-2" data-thumb="#Arrow-1"
+                position="0 -1 6" rotation="-151.5 8.6 173" the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2"
                 material="src: ./Style/Images/PNG/Arrow-1.png ">
             </a-entity>
 
-            <a-entity class="Dote" template="src: #plane" data-src="#Scene-3" data-thumb="#Arrow-4" position="-0 0 -6"
-                the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
+
+            <a-entity scale="0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-3" data-thumb="#Arrow-1"
+                position="-0 -1 -6" the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
             </a-entity>
 
-            <a-entity class="Dote" template="src: #plane" data-src="#Scene-4" data-thumb="#Arrow-4"
+            <a-entity scale="0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-4" data-thumb="#Arrow-1"
                 position="5.7 -1 -2.4" rotation="-70.2 0 0" the_dote="Name_of_dote: Dote-4">
             </a-entity>
 
-            <a-entity class="Dote" template="src: #plane" data-src="#Scene-5" data-thumb="#Arrow-4"
+            <a-entity scale="0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-5" data-thumb="#Arrow-1"
                 position="5.7 -1 2.4" rotation="-64.3 -145 -11.6" the_dote="Name_of_dote: Dote-5">
             </a-entity>
 
         </a-entity>
 
         <!-- Group-2. -->
-        <a-entity class="groups" id="Group-2">
+        <a-entity class="groups" id="Group-2" visible="false">
 
-            <a-entity class="Dote" template="src: #plane" data-src="#Scene-1" data-thumb="#Arrow-3" position="4.2 -1 -4"
+            <a-entity class="Dote" template="src: #plane" data-src="#Scene-1" data-thumb="#Arrow-1" position="4.2 -1 -4"
                 rotation="-50 -55 0" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1" ">
             </a-entity>
 
-            <a-entity class=" Dote" template="src: #plane" data-src="#Scene-3" data-thumb="#Arrow-3"
+            <a-entity class=" Dote" template="src: #plane" data-src="#Scene-3" data-thumb="#Arrow-1"
                 position="1.2 -1 -9" rotation="-50 0 0" the_dote="Name_of_dote: Dote-3 Group_to_activate: Group-3">
             </a-entity>
 
@@ -101,12 +274,116 @@
 
         </a-entity>
 
+        <!-- ############################################################ -->
+        <!-- ############################################################ -->
+        <!-- ############################################################ -->
+        <!-- Row-0 -->
+
+        <a-entity position="0 0 0" rotation="0 181 0" class="pintings-containers" id="pinting-container-0">
+
+            <a-plane scale="150 120 0" class="pintings" rotation="0 0 0" position="-0 100 -400" color="#000"
+                the_pintings="Pinting_Name : GUISS GUISS ;
+                 Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
+                  Autor_Name :Amicale des étudiants des MSAD ;
+                   Size :2.92/4.48;
+                    Price : 17.004 000 francs (26160 € )">
+            </a-plane>
+
+        </a-entity>
+        <!-- Row-1 -->
+
+        <a-entity position="0 0 0" rotation="0 149 0" class="pintings-containers" id="pinting-container-1">
+
+            <a-plane scale="100 120 0" class="pintings" rotation="0 0 0" position="-0 220 -400" color="#000"
+                the_pintings="Pinting_Name :Femme Peulh ;
+                 Pinting_Picture: ./Style/Images/Tableaux/femme-peulh.jpg ;
+                  Autor_Name :Mamadou Wade;
+                   Size :2/1.62;
+                    Price : 4.212 000 francs (6480 € )">
+            </a-plane>
+
+            <a-plane scale="90 200 0" class="pintings" rotation="0 0 0" position="-0 20 -400" color="#000" the_pintings="Pinting_Name :Tangouna Mbaar;
+                Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
+                Autor_Name :Ousmane Sy;
+                Size :3.04/1.50;
+                Price : 5.928 000 francs (9120 €)">
+            </a-plane>
+
+        </a-entity>
+
+        <!-- Row-2 -->
+        <a-entity position="0 0 0" rotation="0 111 0" class="pintings-containers" id="pinting-container-2">
+            <a-plane scale="175 140 0" class="pintings" rotation="0 0 0" position="-0 30 -400" color="#000"
+                the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
+                Pinting_Picture: ./Style/Images/Tableaux/maitre-du-bois-saccre.jpg;
+                Autor_Name :ANSOUMANA DIEDHIOU;
+                Size : 1.9/2.97; 
+                                Price : 6.799 000 francs (10460 € ) ">
+            </a-plane>
+
+            <a-plane scale="150 160 0" class="pintings" rotation="0 0 0" position="-0 210 -400" color="#000"
+                the_pintings="Pinting_Name :JOMBAJO;
+                Pinting_Picture: ./Style/Images/Tableaux/Jombojo.jpg;
+                Autor_Name :KALIDOU KASSE;
+                Size :3.23/2.28;
+                Price : 9.568 000 francs (14720 €)">
+            </a-plane>
+        </a-entity>
+
+        <!-- Row-3 -->
+        <a-entity position=" 0 0 0" rotation="0 70 0" class="pintings-containers" id="pinting-container-2">
+            <a-plane scale="100 145 0" class="pintings" rotation="0 0 0" position="-0 12 -400" color="#000"
+                the_pintings="Pinting_Name : Diala Ndama;
+                Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
+                Autor_Name :ALASSANE.M.DIOP;
+                Size : 2.33/1.60;
+                Price : 5.109 000 francs (7860 €)">
+            </a-plane>
+
+            <a-plane scale="250 140 0" class="pintings" rotation="33 -1.8 -2" position="-0 270 -400" color="#000"
+                the_pintings="Pinting_Name :Cinquantenaire;
+                Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
+                Autor_Name :MSAD;
+                Size : 2.43/3.37;
+                Price : 10.660 000 francs (16400 €)">
+            </a-plane>
+        </a-entity>
+
+        <!-- Row-4 -->
+        <a-entity position=" 0 0 0" rotation="0 30.7 0" class="pintings-containers" id="pinting-container-2">
+            <a-plane scale="100 100 0" class="pintings" rotation="0 0 0" position="-0 30 -400" color="#000"
+                the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
+                Pinting_Picture: ./Style/Images/Tableaux/NABOULE.jpg;
+                Autor_Name :Sény Gadiaga;
+                Size : 2.36/3.34;
+                Price : 10.257 000 francs (15780 €)">
+            </a-plane>
+
+            <a-plane scale="170 120 0" class="pintings" rotation="10 6 -5" position="-0 240 -400" color="#000"
+                the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
+                Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
+                Autor_Name :Sény Gadiaga;
+                Size : 2.36/3.34;
+                Price : 10.257 000 francs (15780 € )">
+            </a-plane>
+        </a-entity>
+
+        <!-- Row-5 -->
+        <a-entity position="0 0 0" rotation="0 -2 0" class="pintings-containers" id="pinting-container-2">
+
+            <a-plane scale="100 120 0" class="pintings" rotation="0 0 0" position="-0 120 -400" color="#000"
+                the_pintings="Pinting_Name :Tefess;
+                Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
+                Autor_Name :Mamadou Gaye;
+                Size : 2.04/1.84;
+                Price : 4.875 000 francs (7500 €)">
+            </a-plane>
+
+        </a-entity>
 
     </a-scene>
-
-    <!-- Link template interactions scrtipt. -->
+    <!-- <script src="./App.js"></script> -->
     <script>
-
         let groups = document.querySelectorAll('.groups')
         console.log(groups);
 
@@ -116,13 +393,13 @@
             //!Run permanatli
             // tick: function () {
             // },
-            //Run Ones  
+            //Run Ones
+
             init: function () {
                 //get whats in the entity
                 var stringToLog = this.data;
                 let Dote_Name = this.data.Name_of_dote
                 let Group_to_activate = this.data.Group_to_activate
-
 
                 this.el.addEventListener('click', (theDote) => {
                     console.log('####################');
@@ -130,7 +407,6 @@
                     // let oldPosition = theDote.srcElement.getAttribute('position')
                     // console.log(`click ${Dote_Name}`);
                     // console.log(the_to_group_to_activate);
-
                     groups.forEach(group => {
                         group.setAttribute('visible', 'false')
                     });
@@ -142,17 +418,68 @@
                     // console.log(oldPosition );
                     // let oldPosition = theDote.sre
                     // theDote.srcElement.setAttribute('position' , '0 0 -4') 
+                });
+            }
+        });
+
+        //###############################################################
+        //###############################################################
+        //Run Ones
+        let the_crad_container = document.querySelector('#the_crad_container')
+        let the_close_crad = document.querySelector('#close_crad')
+
+        let the_art_title = document.querySelector('#art_title')
+        let the_art_author = document.querySelector('#art_author')
+        let the_art_price = document.querySelector('#the_art_price')
+        let the_art_size = document.querySelector('#the_art_size')
+        let the_art_picture = document.querySelector('#the_art_picture').childNodes[1]
+        console.log(the_art_picture);
+        the_close_crad.addEventListener('click', function () {
+            the_crad_container.style.display = 'none'
+        });
+
+        AFRAME.registerComponent('the_pintings', {
+            schema: {
+                Pinting_Name: { type: "string", default: "" },
+                Pinting_Picture: { type: "string", default: "" },
+                Autor_Name: { type: "string", default: "" },
+                Size: { type: "string", default: "" },
+                Price: { type: "string", default: "" }
+            },
+            init: function () {
+                this.el.setAttribute("opacity", "0");
+                console.log(this.data);
+                var The_Name = this.data.Pinting_Name;
+                var The_Author = this.data.Autor_Name;
+                var The_Price = this.data.Price;
+                var The_Size = this.data.Size;
+                var The_Picture = this.data.Pinting_Picture;
+                //  material = 'opacity:0'
+                this.el.addEventListener('click', function () {
+                    console.log(The_Picture);
+                    // console.log(The_Name);
+                    the_art_title.innerHTML = The_Name
+                    the_art_author.innerHTML = `par:${The_Author}`
+                    the_art_price.innerHTML = The_Price
+                    the_art_size.innerHTML = The_Size
+                    the_crad_container.style.display = 'flex'
+
+                    the_art_picture.setAttribute("src", `${The_Picture}`)
+                    // the_art_picture.style.backgroundImage = `url('./Images/Tableaux/cinquantenaire.jpg')`
+                    // console.log(the_art_picture.style);
 
                 });
             }
         });
 
     </script>
+
     <script id="plane" type="text/html">
-    <a-entity class="link" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: ${thumb}"
+    <a-entity class="link" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: ${thumb} ; transparent:true"
         sound="on: click; src: #click-sound" event-set__mouseenter="scale: 1.2 1.2 1"
         event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: ${src}">
     </a-entity>
+
     </script>
 </body>
 
