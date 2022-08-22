@@ -242,11 +242,11 @@
                 the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
             </a-plane>
 
-            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="5.7 -1 -2.4"
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="6.5 -1 -2.4"
                 rotation="-70.2 0 0" the_dote="Name_of_dote: Dote-4 ; Group_to_activate: Group-4">
             </a-plane>
 
-            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="5.7 -1 2.4"
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="6.5 -1 2.4"
                 rotation="-64.3 -145 -11.6" the_dote="Name_of_dote: Dote-5 ; Group_to_activate: Group-5">
             </a-plane>
         </a-entity>
@@ -264,9 +264,7 @@
 
         <!-- Group-3 -->
         <a-entity scale=" 0 0 0" class="groups" id="Group-3" visible="false">
-
-
-            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="4 0 3"
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="4.2 -1 4"
                 rotation="200 20 173" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
             </a-plane>
 
@@ -278,12 +276,12 @@
         <!-- Group-4 -->
         <a-entity scale="0 0 0" class="groups" id="Group-4" visible="false">
 
-            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="0 -1 10"
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="0 -1 8"
                 rotation="200 20 173" the_dote="Name_of_dote: Dote-5 ; Group_to_activate: Group-5">
             </a-plane>
 
-            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="-6 -1 -6"
-                rotation="-90 -100 180" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="-6 -1 -9"
+                rotation="-110 -100 180" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
             </a-plane>
 
 
@@ -296,13 +294,9 @@
                 rotation="0 0 0" the_dote="Name_of_dote: Dote-4 ; Group_to_activate: Group-4">
             </a-plane>
 
-            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="0 -1 -8"
-                position="-6 -1 9" rotation="-110 -100 180"
-                the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="-6 -1 9"
+                rotation="-110 -100 180" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
             </a-plane>
-
-
-
 
         </a-entity>
         <!-- ############################################################ -->
@@ -993,11 +987,7 @@
                 var The_Picture = this.data.Pinting_Picture;
                 let TheElement = this.el;
                 this.el.addEventListener('click', function () {
-                    console.log('##################');
-                    console.log(The_Picture);
-                    console.log('##################');
-                    // console.log(The_Name);
-                    // the_art_picture.setAttribute("src", ``)
+
                     the_art_title.innerHTML = The_Name
                     the_art_author.innerHTML = `par:${The_Author}`
                     the_art_price.innerHTML = The_Price
