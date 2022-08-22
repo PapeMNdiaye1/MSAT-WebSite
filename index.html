@@ -191,6 +191,11 @@
 
     </div>
 
+    <!-- <a-scene 
+    cursor="rayOrigin: mouse"
+        inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js" ">
+        <a-assets> -->
+
     <a-scene cursor="rayOrigin: mouse"
         inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js" ">
         <a-assets>
@@ -219,11 +224,6 @@
         <a-entity laser-controls="hand: right"
             raycaster="objects: [data-clickable] ; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
 
-        <!-- <a-entity oculus-go-controls></a-entity> -->
-        <!-- <a-entity raycaster="objects: [data-clickable]; far: 500; lineColor: #23343b; lineOpacity: 0.5"
-            oculus-touch-controls="hand: left"></a-entity>
-        <a-entity raycaster="objects: [data-clickable]; far: 500; lineColor: #23343b; lineOpacity: 0.5"
-            oculus-touch-controls="hand: right"></a-entity> -->
 
         <a-sky id="image-360" radius="500" src="#Scene-1"
             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
@@ -235,24 +235,23 @@
         <!-- Group-1. -->
         <a-entity scale="1 1 1" class="groups" id="Group-1" visible="true">
 
-            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote clickable " template="src: #plane"
-                data-src="#Scene-2" data-thumb="#Arrow-1" position="0 -1 6" rotation="-151.5 8.6 173"
+            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-2"
+                data-thumb="#Arrow-1" position="0 -1 6" rotation="-151.5 8.6 173"
                 the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2"
                 material="src: ./Style/Images/PNG/Arrow-1.png">
             </a-entity>
 
-            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote clickable" template="src: #plane"
-                data-src="#Scene-3" data-thumb="#Arrow-1" position="-0 -1 -6"
-                the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
+            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-3"
+                data-thumb="#Arrow-1" position="-0 -1 -6" the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
             </a-entity>
 
-            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote clickable" template="src: #plane"
-                data-src="#Scene-4" data-thumb="#Arrow-1" position="5.7 -1 -2.4" rotation="-70.2 0 0"
+            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-4"
+                data-thumb="#Arrow-1" position="5.7 -1 -2.4" rotation="-70.2 0 0"
                 the_dote="Name_of_dote: Dote-4 ; Group_to_activate: Group-4">
             </a-entity>
 
-            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote clickable" template="src: #plane"
-                data-src="#Scene-5" data-thumb="#Arrow-1" position="5.7 -1 2.4" rotation="-64.3 -145 -11.6"
+            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-5"
+                data-thumb="#Arrow-1" position="5.7 -1 2.4" rotation="-64.3 -145 -11.6"
                 the_dote="Name_of_dote: Dote-5 ; Group_to_activate: Group-5">
             </a-entity>
 
@@ -851,7 +850,6 @@
             </a-entity>
         </a-entity>
     </a-scene>
-    <!-- <script src="./App.js"></script> -->
     <script>
         let groups = document.querySelectorAll('.groups')
         let big_pintings_containers = document.querySelectorAll('.big-pintings-containers')
@@ -877,11 +875,8 @@
                     // if (condition) {
                     //     Dote_Name
                     // }
-                    console.log('####################');
-                    // console.log(Group_to_activate);
-                    // let oldPosition = theDote.srcElement.getAttribute('position')
-                    // console.log(`click on ${Dote_Name} to activet ${Group_to_activate}`);
-                    // console.log(the_to_group_to_activate);
+                    console.log('OK');
+
                     big_pintings_containers.forEach(element => {
                         element.setAttribute('visible', 'false')
                         element.setAttribute('scale', '0 0 0')
@@ -960,8 +955,10 @@
                 var The_Price = this.data.Price;
                 var The_Size = this.data.Size;
                 var The_Picture = this.data.Pinting_Picture;
-                //  material = 'opacity:0'
+                let TheElement = this.el;
                 this.el.addEventListener('click', function () {
+                    TheElement.setAttribute("opacity", "0.6");
+                    console.log('##################');
                     console.log(The_Picture);
                     console.log('##################');
                     // console.log(The_Name);
@@ -1006,6 +1003,7 @@
     </script>
 
     <script id="plane" type="text/html">
+
     <a-entity class="link" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: ${thumb} ; transparent:true"
         sound="on: click; src: #click-sound" event-set__mouseenter="scale: 1.2 1.2 1"
         event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: ${src}">
