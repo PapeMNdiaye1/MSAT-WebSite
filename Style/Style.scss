@@ -11,6 +11,10 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+.a-loader-title {
+    background-color: black;
+}
+
 #the_crad_container {
     position: absolute;
     margin: auto;
@@ -20,7 +24,6 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-
     display: none;
     // display: block;
 
@@ -121,8 +124,6 @@ html {
 
     &:hover {
         background: rgba(55, 55, 60, 0);
-        //     background-image: url('./Images/PNG/VR-icon.png');
-        //     transform: scale(1.1);
     }
 
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSAT</title>
+    <title>MSAD</title>
     <!-- <script rel="stylesheet" href="/Style/Style.css"></script> -->
     <link rel="stylesheet" href="/Style/Style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -215,10 +215,15 @@
 
         <!-- VR-controls -->
         <a-entity laser-controls="hand: left"
-            raycaster="objects: [data-clickable]; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
+            raycaster="objects: [data-clickable] ; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
         <a-entity laser-controls="hand: right"
-            raycaster="objects: [data-clickable]; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
+            raycaster="objects: [data-clickable] ; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
 
+        <!-- <a-entity oculus-go-controls></a-entity> -->
+        <!-- <a-entity raycaster="objects: [data-clickable]; far: 500; lineColor: #23343b; lineOpacity: 0.5"
+            oculus-touch-controls="hand: left"></a-entity>
+        <a-entity raycaster="objects: [data-clickable]; far: 500; lineColor: #23343b; lineOpacity: 0.5"
+            oculus-touch-controls="hand: right"></a-entity> -->
 
         <a-sky id="image-360" radius="500" src="#Scene-1"
             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
@@ -230,23 +235,23 @@
         <!-- Group-1. -->
         <a-entity scale="1 1 1" class="groups" id="Group-1" visible="true">
 
-            <a-entity raycaster="objects: [data-clickable]" scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane"
+            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote clickable " template="src: #plane"
                 data-src="#Scene-2" data-thumb="#Arrow-1" position="0 -1 6" rotation="-151.5 8.6 173"
                 the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2"
                 material="src: ./Style/Images/PNG/Arrow-1.png">
             </a-entity>
 
-            <a-entity raycaster="objects: [data-clickable]" scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane"
+            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote clickable" template="src: #plane"
                 data-src="#Scene-3" data-thumb="#Arrow-1" position="-0 -1 -6"
                 the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
             </a-entity>
 
-            <a-entity raycaster="objects: [data-clickable]" scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane"
+            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote clickable" template="src: #plane"
                 data-src="#Scene-4" data-thumb="#Arrow-1" position="5.7 -1 -2.4" rotation="-70.2 0 0"
                 the_dote="Name_of_dote: Dote-4 ; Group_to_activate: Group-4">
             </a-entity>
 
-            <a-entity raycaster="objects: [data-clickable]" scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane"
+            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote clickable" template="src: #plane"
                 data-src="#Scene-5" data-thumb="#Arrow-1" position="5.7 -1 2.4" rotation="-64.3 -145 -11.6"
                 the_dote="Name_of_dote: Dote-5 ; Group_to_activate: Group-5">
             </a-entity>
@@ -314,12 +319,12 @@
             <!-- Row-0 -->
             <a-entity position="0 0 0" rotation="0 181 0" class="pintings-containers" id="pinting-container-0">
 
-                <a-plane scale="150 120 0" class="pintings" rotation="0 0 0" position="-0 100 -400" color="#000"
-                    the_pintings="Pinting_Name : GUISS GUISS ;
-                         Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
-                          Autor_Name :Amicale des étudiants des MSAD ;
-                           Size :2.92/4.48;
-                            Price : 17.004 000 francs (26160 € )">
+                <a-plane data-clickable scale="150 120 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 100 -400" color="#000" the_pintings="Pinting_Name : GUISS GUISS ;
+                        Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
+                        Autor_Name :Amicale des étudiants des MSAD ;
+                        Size :2.92/4.48;
+                        Price : 17.004 000 francs (26160 € )">
                 </a-plane>
 
             </a-entity>
@@ -327,15 +332,15 @@
             <!-- Row-1 -->
             <a-entity position="0 0 0" rotation="0 149 0" class="pintings-containers" id="pinting-container-1">
 
-                <a-plane scale="100 120 0" class="pintings" rotation="0 0 0" position="-0 220 -400" color="#000"
-                    the_pintings="Pinting_Name :Femme Peulh ;
+                <a-plane data-clickable scale="100 120 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 220 -400" color="#000" the_pintings="Pinting_Name :Femme Peulh ;
                          Pinting_Picture: ./Style/Images/Tableaux/femme-peulh.jpg ;
                           Autor_Name :Mamadou Wade;
                            Size :2/1.62;
                            Price : 4.212 000 francs (6480 € )">
                 </a-plane>
 
-                <a-plane scale="90 200 0" class="pintings" rotation="0 0 0" position="-0 20 -400" color="#000"
+                <a-plane scale="90 200 0" class="pintings clickable" rotation="0 0 0" position="-0 20 -400" color="#000"
                     the_pintings="Pinting_Name :Tangouna Mbaar;
                     Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                         Autor_Name :Ousmane Sy;
@@ -347,16 +352,16 @@
 
             <!-- Row-2 -->
             <a-entity position="0 0 0" rotation="0 111 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="175 140 0" class="pintings" rotation="0 0 0" position="-0 30 -400" color="#000"
-                    the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
+                <a-plane data-clickable scale="175 140 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 30 -400" color="#000" the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
                     Pinting_Picture: ./Style/Images/Tableaux/maitre-du-bois-saccre.jpg;
                     Autor_Name :ANSOUMANA DIEDHIOU;
                     Size : 1.9/2.97; 
                                         Price : 6.799 000 francs (10460 € ) ">
                 </a-plane>
 
-                <a-plane scale="150 160 0" class="pintings" rotation="0 0 0" position="-0 210 -400" color="#000"
-                    the_pintings="Pinting_Name :JOMBAJO;
+                <a-plane data-clickable scale="150 160 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 210 -400" color="#000" the_pintings="Pinting_Name :JOMBAJO;
                         Pinting_Picture: ./Style/Images/Tableaux/Jombojo.jpg;
                         Autor_Name :KALIDOU KASSE;
                         Size :3.23/2.28;
@@ -366,16 +371,16 @@
 
             <!-- Row-3 -->
             <a-entity position=" 0 0 0" rotation="0 70 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="100 145 0" class="pintings" rotation="0 0 0" position="-0 12 -400" color="#000"
-                    the_pintings="Pinting_Name : Diala Ndama;
+                <a-plane data-clickable scale="100 145 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 12 -400" color="#000" the_pintings="Pinting_Name : Diala Ndama;
                         Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
                         Autor_Name :ALASSANE.M.DIOP;
                         Size : 2.33/1.60;
                         Price : 5.109 000 francs (7860 €)">
                 </a-plane>
 
-                <a-plane scale="250 140 0" class="pintings" rotation="33 -1.8 -2" position="-0 270 -400" color="#000"
-                    the_pintings="Pinting_Name :Cinquantenaire;
+                <a-plane data-clickable scale="250 140 0" class="pintings clickable" rotation="33 -1.8 -2"
+                    position="-0 270 -400" color="#000" the_pintings="Pinting_Name :Cinquantenaire;
                         Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
                         Autor_Name :MSAD;
                         Size : 2.43/3.37;
@@ -385,16 +390,16 @@
 
             <!-- Row-4 -->
             <a-entity position=" 0 0 0" rotation="0 30.7 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="100 100 0" class="pintings" rotation="0 0 0" position="-0 30 -400" color="#000"
-                    the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
+                <a-plane data-clickable scale="100 100 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 30 -400" color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                         Pinting_Picture: ./Style/Images/Tableaux/NABOULE.jpg;
                         Autor_Name :Sény Gadiaga;
                         Size : 2.36/3.34;
                         Price : 10.257 000 francs (15780 €)">
                 </a-plane>
 
-                <a-plane scale="170 120 0" class="pintings" rotation="10 6 -5" position="-0 240 -400" color="#000"
-                    the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
+                <a-plane data-clickable scale="170 120 0" class="pintings clickable" rotation="10 6 -5"
+                    position="-0 240 -400" color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                         Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                         Autor_Name :Sény Gadiaga;
                         Size : 2.36/3.34;
@@ -405,8 +410,8 @@
             <!-- Row-5 -->
             <a-entity position="0 0 0" rotation="0 -2 0" class="pintings-containers" id="pinting-container-2">
 
-                <a-plane scale="100 120 0" class="pintings" rotation="0 0 0" position="-0 120 -400" color="#000"
-                    the_pintings="Pinting_Name :Tefess;
+                <a-plane data-clickable scale="100 120 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 120 -400" color="#000" the_pintings="Pinting_Name :Tefess;
                         Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
                         Autor_Name :Mamadou Gaye;
                         Size : 2.04/1.84;
@@ -422,8 +427,8 @@
             <!-- Row-0 -->
             <a-entity position="0 0 0" rotation="0 190 0" class="pintings-containers" id="pinting-container-0">
 
-                <a-plane scale="260 160 0" class="pintings" rotation="0 -30 0" position="-0 124 -400" color="#000"
-                    the_pintings="Pinting_Name : GUISS GUISS ;
+                <a-plane data-clickable scale="260 160 0" class="pintings clickable" rotation="0 -30 0"
+                    position="-0 124 -400" color="#000" the_pintings="Pinting_Name : GUISS GUISS ;
                          Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                           Autor_Name :Amicale des étudiants des MSAD ;
                        Size :2.92/4.48;
@@ -435,16 +440,16 @@
             <!-- Row-1 -->
             <a-entity position="0 0 0" rotation="0 140 0" class="pintings-containers" id="pinting-container-1">
 
-                <a-plane scale="100 120 0" class="pintings" rotation="0 0 0" position="-0 250 -300" color="#000"
-                    the_pintings="Pinting_Name :Femme Peulh ;
+                <a-plane data-clickable scale="100 120 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 250 -300" color="#000" the_pintings="Pinting_Name :Femme Peulh ;
                          Pinting_Picture: ./Style/Images/Tableaux/femme-peulh.jpg ;
                           Autor_Name :Mamadou Wade;
                            Size :2/1.62;
                            Price : 4.212 000 francs (6480 € )">
                 </a-plane>
 
-                <a-plane scale="125 300 0" class="pintings" rotation="0 0 0" position="-0 20 -400" color="#000"
-                    the_pintings="Pinting_Name :Tangouna Mbaar;
+                <a-plane data-clickable scale="125 300 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 20 -400" color="#000" the_pintings="Pinting_Name :Tangouna Mbaar;
                     Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                         Autor_Name :Ousmane Sy;
                         Size :3.04/1.50;
@@ -455,16 +460,16 @@
 
             <!-- Row-2 -->
             <a-entity position="0 -8 0" rotation="0 86 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="196 140 0" class="pintings" rotation="0 10 0" position="10 30 -400" color="#000"
-                    the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
+                <a-plane data-clickable scale="196 140 0" class="pintings clickable" rotation="0 10 0"
+                    position="10 30 -400" color="#000" the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
                     Pinting_Picture: ./Style/Images/Tableaux/maitre-du-bois-saccre.jpg;
                     Autor_Name :ANSOUMANA DIEDHIOU;
                     Size : 1.9/2.97; 
                     Price : 6.799 000 francs (10460 €)">
                 </a-plane>
 
-                <a-plane scale="150 220 0" class="pintings" rotation="0 20 0" position="-0 240 -350" color="#000"
-                    the_pintings="Pinting_Name :JOMBAJO;
+                <a-plane data-clickable scale="150 220 0" class="pintings clickable" rotation="0 20 0"
+                    position="-0 240 -350" color="#000" the_pintings="Pinting_Name :JOMBAJO;
                         Pinting_Picture: ./Style/Images/Tableaux/Jombojo.jpg;
                         Autor_Name :KALIDOU KASSE;
                         Size :3.23/2.28;
@@ -474,16 +479,16 @@
 
             <!-- Row-3 -->
             <a-entity position=" 0 0 0" rotation="0 50 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="100 130 0" class="pintings" rotation="0 0 0" position="-0 10 -400" color="#000"
-                    the_pintings="Pinting_Name : Diala Ndama;
+                <a-plane data-clickable scale="100 130 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 10 -400" color="#000" the_pintings="Pinting_Name : Diala Ndama;
                         Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
                         Autor_Name :ALASSANE.M.DIOP;
                         Size : 2.33/1.60;
                         Price : 5.109 000 francs (7860 €)">
                 </a-plane>
 
-                <a-plane scale="180 110 0" class="pintings" rotation="0 20 -0" position="-0 160 -300" color="#000"
-                    the_pintings="Pinting_Name :Cinquantenaire;
+                <a-plane data-clickable scale="180 110 0" class="pintings clickable" rotation="0 20 -0"
+                    position="-0 160 -300" color="#000" the_pintings="Pinting_Name :Cinquantenaire;
                         Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
                         Autor_Name :MSAD;
                         Size : 2.43/3.37;
@@ -493,16 +498,16 @@
 
             <!-- Row-4 -->
             <a-entity position=" 0 -17 0" rotation="0 21 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="70 80 0" class="pintings" rotation="0 0 0" position="-10 25 -400" color="#000"
-                    the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
+                <a-plane data-clickable scale="70 80 0" class="pintings clickable" rotation="0 0 0"
+                    position="-10 25 -400" color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                         Pinting_Picture: ./Style/Images/Tableaux/NABOULE.jpg;
                         Autor_Name :Sény Gadiaga;
                         Size : 2.36/3.34;
                         Price : 10.257 000 francs (15780 €)">
                 </a-plane>
 
-                <a-plane scale="150 120 0" class="pintings" rotation="20 -11 -10" position="-10 200 -400" color="#000"
-                    the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
+                <a-plane data-clickable scale="150 120 0" class="pintings clickable" rotation="20 -11 -10"
+                    position="-10 200 -400" color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                         Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                         Autor_Name :Sény Gadiaga;
                         Size : 2.36/3.34;
@@ -514,8 +519,8 @@
             <!-- Row-5 -->
             <a-entity position="0 0 0" rotation="0 -1 0" class="pintings-containers" id="pinting-container-2">
 
-                <a-plane scale="70 75 0" class="pintings" rotation="0 0 0" position="-0 70 -340" color="#000"
-                    the_pintings="Pinting_Name :Tefess;
+                <a-plane data-clickable scale="70 75 0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 70 -340" color="#000" the_pintings="Pinting_Name :Tefess;
                         Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
                         Autor_Name :Mamadou Gaye;
                         Size : 2.04/1.84;
@@ -530,8 +535,8 @@
             <!-- Row-0 -->
             <a-entity position="0 0 0" rotation="0 188 0" class="pintings-containers" id="pinting-container-0">
 
-                <a-plane scale="120 90 0" class="pintings" rotation="0 -20 0" position="-0 70 -400" color="#000"
-                    the_pintings="Pinting_Name : GUISS GUISS ;
+                <a-plane scale="120 90 0" class="pintings clickable" rotation="0 -20 0" position="-0 70 -400"
+                    color="#000" the_pintings="Pinting_Name : GUISS GUISS ;
                                  Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                                   Autor_Name :Amicale des étudiants des MSAD ;
                                    Size :2.92/4.48;
@@ -543,16 +548,16 @@
             <!-- Row-1 -->
             <a-entity position="0 0 0" rotation="0 167 0" class="pintings-containers" id="pinting-container-1">
 
-                <a-plane scale="70 90 0" class="pintings" rotation="0 -25 0" position="-0 175 -400" color="#000"
-                    the_pintings="Pinting_Name :Femme Peulh ;
+                <a-plane scale="70 90 0" class="pintings clickable" rotation="0 -25 0" position="-0 175 -400"
+                    color="#000" the_pintings="Pinting_Name :Femme Peulh ;
                                  Pinting_Picture: ./Style/Images/Tableaux/femme-peulh.jpg ;
                                   Autor_Name :Mamadou Wade;
                                    Size :2/1.62;
                                    Price : 4.212 000 francs (6480 € )">
                 </a-plane>
 
-                <a-plane scale="70 135 0" class="pintings" rotation="0 -25 0" position="-0 20 -400" color="#000"
-                    the_pintings="Pinting_Name :Tangouna Mbaar;
+                <a-plane scale="70 135 0" class="pintings clickable" rotation="0 -25 0" position="-0 20 -400"
+                    color="#000" the_pintings="Pinting_Name :Tangouna Mbaar;
                             Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                                 Autor_Name :Ousmane Sy;
                                 Size :3.04/1.50;
@@ -563,16 +568,16 @@
 
             <!-- Row-2 -->
             <a-entity position="0 0 0" rotation="0 141 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="165 130 0" class="pintings" rotation="0 -33 0" position="-0 30 -400" color="#000"
-                    the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
+                <a-plane scale="165 130 0" class="pintings clickable" rotation="0 -33 0" position="-0 30 -400"
+                    color="#000" the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
                             Pinting_Picture: ./Style/Images/Tableaux/maitre-du-bois-saccre.jpg;
                             Autor_Name :ANSOUMANA DIEDHIOU;
                             Size : 1.9/2.97; 
                                                 Price : 6.799 000 francs (10460 € ) ">
                 </a-plane>
 
-                <a-plane scale="120 160 0" class="pintings" rotation="0 -33 0" position="-0 190 -370" color="#000"
-                    the_pintings="Pinting_Name :JOMBAJO;
+                <a-plane scale="120 160 0" class="pintings clickable" rotation="0 -33 0" position="-0 190 -370"
+                    color="#000" the_pintings="Pinting_Name :JOMBAJO;
                                 Pinting_Picture: ./Style/Images/Tableaux/Jombojo.jpg;
                                 Autor_Name :KALIDOU KASSE;
                                 Size :3.23/2.28;
@@ -582,16 +587,16 @@
 
             <!-- Row-3 -->
             <a-entity position=" 0 0 0" rotation="0 102.5 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="120 195 0" class="pintings" rotation="0 -20 0" position="-0 22 -400" color="#000"
-                    the_pintings="Pinting_Name : Diala Ndama;
+                <a-plane scale="120 195 0" class="pintings clickable" rotation="0 -20 0" position="-0 22 -400"
+                    color="#000" the_pintings="Pinting_Name : Diala Ndama;
                                 Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
                                 Autor_Name :ALASSANE.M.DIOP;
                                 Size : 2.33/1.60;
                                 Price : 5.109 000 francs (7860 €)">
                 </a-plane>
 
-                <a-plane scale="250 140 0" class="pintings" rotation="30 -25 -0" position="-12 280 -300" color="#000"
-                    the_pintings="Pinting_Name :Cinquantenaire;
+                <a-plane scale="250 140 0" class="pintings clickable" rotation="30 -25 -0" position="-12 280 -300"
+                    color="#000" the_pintings="Pinting_Name :Cinquantenaire;
                                 Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
                                 Autor_Name :MSAD;
                                 Size : 2.43/3.37;
@@ -601,16 +606,16 @@
 
             <!-- Row-4 -->
             <a-entity position=" 0 0 0" rotation="0 38 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="180 190 0" class="pintings" rotation="0 0 0" position="-0 50 -400" color="#000"
-                    the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
+                <a-plane scale="180 190 0" class="pintings clickable" rotation="0 0 0" position="-0 50 -400"
+                    color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                                 Pinting_Picture: ./Style/Images/Tableaux/NABOULE.jpg;
                                 Autor_Name :Sény Gadiaga;
                                 Size : 2.36/3.34;
                                 Price : 10.257 000 francs (15780 €)">
                 </a-plane>
 
-                <a-plane scale="230 180 0" class="pintings" rotation="0 6 0" position="-0 320 -270" color="#000"
-                    the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
+                <a-plane scale="230 180 0" class="pintings clickable" rotation="0 6 0" position="-0 320 -270"
+                    color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                                 Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                                 Autor_Name :Sény Gadiaga;
                                 Size : 2.36/3.34;
@@ -621,8 +626,8 @@
             <!-- Row-5 -->
             <a-entity position="0 110 0" rotation="0 -18 0" class="pintings-containers" id="pinting-container-2">
 
-                <a-plane scale="100 160 0" class="pintings" rotation="0 20 0" position="-0 45 -350" color="#000"
-                    the_pintings="Pinting_Name :Tefess;
+                <a-plane scale="100 160 0" class="pintings clickable" rotation="0 20 0" position="-0 45 -350"
+                    color="#000" the_pintings="Pinting_Name :Tefess;
                                 Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
                                 Autor_Name :Mamadou Gaye;
                                 Size : 2.04/1.84;
@@ -637,8 +642,8 @@
             <!-- Row-0 -->
             <a-entity position="0 0 0" rotation="0 147.5 0" class="pintings-containers" id="pinting-container-0">
 
-                <a-plane scale="110 70 0" class="pintings" rotation="0 20 0" position="-0 -32 -400" color="#000"
-                    the_pintings="Pinting_Name : GUISS GUISS ;
+                <a-plane scale="110 70 0" class="pintings clickable" rotation="0 20 0" position="-0 -32 -400"
+                    color="#000" the_pintings="Pinting_Name : GUISS GUISS ;
                                                     Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                                                     Autor_Name :Amicale des étudiants des MSAD ;
                                                     Size :2.92/4.48;
@@ -650,7 +655,7 @@
             <!-- Row-1 -->
             <a-entity position="0 0 0" rotation="0 130.5 0" class="pintings-containers" id="pinting-container-1">
 
-                <a-plane scale="50 65 0" class="pintings" rotation="0 5 0" position="-0 30 -400" color="#000"
+                <a-plane scale="50 65 0" class="pintings clickable" rotation="0 5 0" position="-0 30 -400" color="#000"
                     the_pintings="Pinting_Name :Femme Peulh ;
                                                     Pinting_Picture: ./Style/Images/Tableaux/femme-peulh.jpg ;
                                                     Autor_Name :Mamadou Wade;
@@ -658,7 +663,7 @@
                                                     Price : 4.212 000 francs (6480 € )">
                 </a-plane>
 
-                <a-plane scale="45 90 0" class="pintings" rotation="0 5 0" position="-0 -74 -400" color="#000"
+                <a-plane scale="45 90 0" class="pintings clickable" rotation="0 5 0" position="-0 -74 -400" color="#000"
                     the_pintings="Pinting_Name :Tangouna Mbaar;
                                                 Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                                                 Autor_Name :Ousmane Sy;
@@ -670,7 +675,7 @@
 
             <!-- Row-2 -->
             <a-entity position="0 0 0" rotation="0 112.5 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="86 50 0" class="pintings" rotation="0 0 0" position="-0 -75 -400" color="#000"
+                <a-plane scale="86 50 0" class="pintings clickable" rotation="0 0 0" position="-0 -75 -400" color="#000"
                     the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
                                                 Pinting_Picture: ./Style/Images/Tableaux/maitre-du-bois-saccre.jpg;
                                                 Autor_Name :ANSOUMANA DIEDHIOU;
@@ -678,7 +683,7 @@
                                                                     Price : 6.799 000 francs (10460 € ) ">
                 </a-plane>
 
-                <a-plane scale="60 80 0" class="pintings" rotation="0 0 0" position="-0 13 -370" color="#000"
+                <a-plane scale="60 80 0" class="pintings clickable" rotation="0 0 0" position="-0 13 -370" color="#000"
                     the_pintings="Pinting_Name :JOMBAJO;
                                                     Pinting_Picture: ./Style/Images/Tableaux/Jombojo.jpg;
                                                     Autor_Name :KALIDOU KASSE;
@@ -689,15 +694,15 @@
 
             <!-- Row-3 -->
             <a-entity position=" 0 0 0" rotation="0 95 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="46 73 0" class="pintings" rotation="0 -7 0" position="-0 -82 -400" color="#000"
-                    the_pintings="Pinting_Name : Diala Ndama;
+                <a-plane scale="46 73 0" class="pintings clickable" rotation="0 -7 0" position="-0 -82 -400"
+                    color="#000" the_pintings="Pinting_Name : Diala Ndama;
                                                     Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
                                                     Autor_Name :ALASSANE.M.DIOP;
                                                     Size : 2.33/1.60;
                                                     Price : 5.109 000 francs (7860 €)">
                 </a-plane>
 
-                <a-plane scale="75 53 0" class="pintings" rotation="0 -7 -0" position="0 23 -300" color="#000"
+                <a-plane scale="75 53 0" class="pintings clickable" rotation="0 -7 -0" position="0 23 -300" color="#000"
                     the_pintings="Pinting_Name :Cinquantenaire;
                                                     Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
                                                     Autor_Name :MSAD;
@@ -708,16 +713,16 @@
 
             <!-- Row-4 -->
             <a-entity position=" 0 0 0" rotation="0 76 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="50 60 0" class="pintings" rotation="0 -22 0" position="-0 -90 -400" color="#000"
-                    the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
+                <a-plane scale="50 60 0" class="pintings clickable" rotation="0 -22 0" position="-0 -90 -400"
+                    color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                                                     Pinting_Picture: ./Style/Images/Tableaux/NABOULE.jpg;
                                                     Autor_Name :Sény Gadiaga;
                                                     Size : 2.36/3.34;
                                                     Price : 10.257 000 francs (15780 €)">
                 </a-plane>
 
-                <a-plane scale="70 50 0" class="pintings" rotation="0 -22 0" position="-0 24 -250" color="#000"
-                    the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
+                <a-plane scale="70 50 0" class="pintings clickable" rotation="0 -22 0" position="-0 24 -250"
+                    color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                                                     Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                                                     Autor_Name :Sény Gadiaga;
                                                     Size : 2.36/3.34;
@@ -728,8 +733,8 @@
             <!-- Row-5 -->
             <a-entity position="0 0 0" rotation="0 55 0" class="pintings-containers" id="pinting-container-2">
 
-                <a-plane scale="65 85 0" class="pintings" rotation="0 -30 0" position="-0 -27 -350" color="#000"
-                    the_pintings="Pinting_Name :Tefess;
+                <a-plane scale="65 85 0" class="pintings clickable" rotation="0 -30 0" position="-0 -27 -350"
+                    color="#000" the_pintings="Pinting_Name :Tefess;
                                                     Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
                                                     Autor_Name :Mamadou Gaye;
                                                     Size : 2.04/1.84;
@@ -742,10 +747,10 @@
         <a-entity scale="0 0 0" class="big-pintings-containers" id="big-pintings-containers-5" visible="false">
 
             <!-- Row-0 -->
-            <a-entity position="0 0 0" rotation="0 125 0" class="pintings-containers" id="pinting-container-0">
+            <a-entity position="0 0 0" rotation="0 125 0" class="pintings-containers " id="pinting-container-0">
 
-                <a-plane scale="140 100 0" class="pintings" rotation="0 20 0" position="-0 -47 -400" color="#000"
-                    the_pintings="Pinting_Name : GUISS GUISS ;
+                <a-plane scale="140 100 0" class="pintings clickable" rotation="0 20 0" position="-0 -47 -400"
+                    color="#000" the_pintings="Pinting_Name : GUISS GUISS ;
                                          Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                                           Autor_Name :Amicale des étudiants des MSAD ;
                                            Size :2.92/4.48;
@@ -757,7 +762,7 @@
             <!-- Row-1 -->
             <a-entity position="0 0 0" rotation="0 104 0" class="pintings-containers" id="pinting-container-1">
 
-                <a-plane scale="60 80 0" class="pintings" rotation="0 5 0" position="-0 30 -400" color="#000"
+                <a-plane scale="60 80 0" class="pintings clickable" rotation="0 5 0" position="-0 30 -400" color="#000"
                     the_pintings="Pinting_Name :Femme Peulh ;
                                          Pinting_Picture: ./Style/Images/Tableaux/femme-peulh.jpg ;
                                           Autor_Name :Mamadou Wade;
@@ -765,7 +770,7 @@
                                            Price : 4.212 000 francs (6480 € )">
                 </a-plane>
 
-                <a-plane scale="60 90 0" class="pintings" rotation="0 5 0" position="-0 -85 -400" color="#000"
+                <a-plane scale="60 90 0" class="pintings clickable" rotation="0 5 0" position="-0 -85 -400" color="#000"
                     the_pintings="Pinting_Name :Tangouna Mbaar;
                                     Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                                         Autor_Name :Ousmane Sy;
@@ -777,15 +782,15 @@
 
             <!-- Row-2 -->
             <a-entity position="0 0 0" rotation="0 85 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="86 50 0" class="pintings" rotation="0 20 0" position="-0 -80 -400" color="#000"
-                    the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
+                <a-plane scale="86 50 0" class="pintings clickable" rotation="0 20 0" position="-0 -80 -400"
+                    color="#000" the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
                                     Pinting_Picture: ./Style/Images/Tableaux/maitre-du-bois-saccre.jpg;
                                     Autor_Name :ANSOUMANA DIEDHIOU;
                                     Size : 1.9/2.97; 
                                                         Price : 6.799 000 francs (10460 € ) ">
                 </a-plane>
 
-                <a-plane scale="60 80 0" class="pintings" rotation="0 20 0" position="-0 13 -370" color="#000"
+                <a-plane scale="60 80 0" class="pintings clickable" rotation="0 20 0" position="-0 13 -370" color="#000"
                     the_pintings="Pinting_Name :JOMBAJO;
                                         Pinting_Picture: ./Style/Images/Tableaux/Jombojo.jpg;
                                         Autor_Name :KALIDOU KASSE;
@@ -796,15 +801,15 @@
 
             <!-- Row-3 -->
             <a-entity position=" 0 0 0" rotation="0 67.5 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="46 70 0" class="pintings" rotation="0 -0 0" position="-0 -74 -400" color="#000"
-                    the_pintings="Pinting_Name : Diala Ndama;
+                <a-plane scale="46 70 0" class="pintings clickable" rotation="0 -0 0" position="-0 -74 -400"
+                    color="#000" the_pintings="Pinting_Name : Diala Ndama;
                                         Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
                                         Autor_Name :ALASSANE.M.DIOP;
                                         Size : 2.33/1.60;
                                         Price : 5.109 000 francs (7860 €)">
                 </a-plane>
 
-                <a-plane scale="70 50 0" class="pintings" rotation="0 -0 -0" position="0 23 -300" color="#000"
+                <a-plane scale="70 50 0" class="pintings clickable" rotation="0 -0 -0" position="0 23 -300" color="#000"
                     the_pintings="Pinting_Name :Cinquantenaire;
                                         Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
                                         Autor_Name :MSAD;
@@ -815,7 +820,7 @@
 
             <!-- Row-4 -->
             <a-entity position=" 0 0 0" rotation="0 49.5 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane scale="50 60 0" class="pintings" rotation="0 0 0" position="-0 -70 -400" color="#000"
+                <a-plane scale="50 60 0" class="pintings clickable" rotation="0 0 0" position="-0 -70 -400" color="#000"
                     the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                                         Pinting_Picture: ./Style/Images/Tableaux/NABOULE.jpg;
                                         Autor_Name :Sény Gadiaga;
@@ -823,7 +828,7 @@
                                         Price : 10.257 000 francs (15780 €)">
                 </a-plane>
 
-                <a-plane scale="70 50 0" class="pintings" rotation="0 6 0" position="-0 20 -270" color="#000"
+                <a-plane scale="70 50 0" class="pintings clickable" rotation="0 6 0" position="-0 20 -270" color="#000"
                     the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                                         Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                                         Autor_Name :Sény Gadiaga;
@@ -835,8 +840,8 @@
             <!-- Row-5 -->
             <a-entity position="0 0 0" rotation="0 32 0" class="pintings-containers" id="pinting-container-2">
 
-                <a-plane scale="65 65 0" class="pintings" rotation="0 -30 0" position="-0 -17 -350" color="#000"
-                    the_pintings="Pinting_Name :Tefess;
+                <a-plane scale="65 65 0" class="pintings clickable" rotation="0 -30 0" position="-0 -17 -350"
+                    color="#000" the_pintings="Pinting_Name :Tefess;
                                         Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
                                         Autor_Name :Mamadou Gaye;
                                         Size : 2.04/1.84;
@@ -958,6 +963,7 @@
                 //  material = 'opacity:0'
                 this.el.addEventListener('click', function () {
                     console.log(The_Picture);
+                    console.log('##################');
                     // console.log(The_Name);
                     // the_art_picture.setAttribute("src", ``)
                     the_art_title.innerHTML = The_Name
@@ -966,13 +972,34 @@
                     the_art_size.innerHTML = The_Size
                     the_crad_container.style.display = 'flex'
                     the_art_picture.setAttribute("src", `${The_Picture}`)
-
-
-
                     // the_art_picture.style.backgroundImage = `url('./Images/Tableaux/cinquantenaire.jpg')`
                     // console.log(the_art_picture.style);
 
                 });
+            }
+        });
+        //###############################################################
+        //###############################################################
+        AFRAME.registerComponent('raycaster-listen', {
+            init: function () {
+                // Use events to figure out what raycaster is listening so we don't have to
+                // hardcode the raycaster.
+                this.el.addEventListener('raycaster-intersected', evt => {
+                    this.raycaster = evt.detail.el;
+                    console.log('#############');
+                });
+                this.el.addEventListener('raycaster-intersected-cleared', evt => {
+                    this.raycaster = null;
+                    console.log('#############x');
+                });
+            },
+
+            tick: function () {
+                if (!this.raycaster) { return; }  // Not intersecting.
+
+                let intersection = this.raycaster.components.raycaster.getIntersection(this.el);
+                if (!intersection) { return; }
+                console.log(intersection.point);
             }
         });
 

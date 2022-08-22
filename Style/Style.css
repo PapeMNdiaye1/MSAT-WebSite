@@ -10,6 +10,10 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
+.a-loader-title {
+  background-color: black;
+}
+
 #the_crad_container {
   position: absolute;
   margin: auto;
@@ -20,11 +24,11 @@ html {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: none;
 }
 
@@ -37,9 +41,9 @@ html {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3] 2em;
-  grid-template-columns: repeat(3, 1fr) 2em;
+      grid-template-columns: repeat(3, 1fr) 2em;
   -ms-grid-rows: (2em)[5] 1fr (2em)[2];
-  grid-template-rows: repeat(5, 2em) 1fr repeat(2, 2em);
+      grid-template-rows: repeat(5, 2em) 1fr repeat(2, 2em);
 }
 
 #the_crad_container #the_crad #art_title {
@@ -73,11 +77,11 @@ html {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-image: url("./Images/Tableaux/guis guis.jpg");
 }
 
@@ -125,19 +129,18 @@ html {
   background-size: 90%;
   background-position: center;
   -webkit-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
   -webkit-filter: invert(100%);
-  filter: invert(100%);
+          filter: invert(100%);
 }
 
 .a-enter-vr .a-enter-vr-button:hover {
   background-image: url("./Images/PNG/VR-icon.png");
   -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .a-enter-vr:hover {
   background: rgba(55, 55, 60, 0);
 }
-
 /*# sourceMappingURL=Style.css.map */
