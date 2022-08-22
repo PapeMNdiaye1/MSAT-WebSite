@@ -234,64 +234,57 @@
         <!-- ############################################################ -->
         <!-- Group-1. -->
         <a-entity scale="1 1 1" class="groups" id="Group-1" visible="true">
+            <a-plane data-clickable class="pintings clickable" position="0 -1 6" rotation="-151.5 8.6 173"
+                material="src: #Arrow-1; transparent:true" the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2">
+            </a-plane>
 
-            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-2"
-                data-thumb="#Arrow-1" position="0 -1 6" rotation="-151.5 8.6 173"
-                the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2"
-                material="src: ./Style/Images/PNG/Arrow-1.png">
-            </a-entity>
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="-0 -1 -6"
+                the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
+            </a-plane>
 
-            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-3"
-                data-thumb="#Arrow-1" position="-0 -1 -6" the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
-            </a-entity>
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="5.7 -1 -2.4"
+                rotation="-70.2 0 0" the_dote="Name_of_dote: Dote-4 ; Group_to_activate: Group-4">
+            </a-plane>
 
-            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-4"
-                data-thumb="#Arrow-1" position="5.7 -1 -2.4" rotation="-70.2 0 0"
-                the_dote="Name_of_dote: Dote-4 ; Group_to_activate: Group-4">
-            </a-entity>
-
-            <a-entity data-clickable scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-5"
-                data-thumb="#Arrow-1" position="5.7 -1 2.4" rotation="-64.3 -145 -11.6"
-                the_dote="Name_of_dote: Dote-5 ; Group_to_activate: Group-5">
-            </a-entity>
-
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="5.7 -1 2.4"
+                rotation="-64.3 -145 -11.6" the_dote="Name_of_dote: Dote-5 ; Group_to_activate: Group-5">
+            </a-plane>
         </a-entity>
 
         <!-- Group-2. -->
         <a-entity scale=" 0 0 0" class="groups" id="Group-2" visible="false">
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true " position="4.2 -1 -4"
+                rotation="-50 -55 0" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
+            </a-plane>
 
-            <a-entity class="Dote" template="src: #plane" data-src="#Scene-1" data-thumb="#Arrow-1" position="4.2 -1 -4"
-                rotation="-50 -55 0" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1" ">
-            </a-entity>
-
-            <a-entity class=" Dote" template="src: #plane" data-src="#Scene-3" data-thumb="#Arrow-1"
-                position="1.2 -1 -9" rotation="-50 0 0" the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
-            </a-entity>
-
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="1.2 -1 -9"
+                rotation="-50 0 0" the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
+            </a-plane>
         </a-entity>
 
         <!-- Group-3 -->
         <a-entity scale=" 0 0 0" class="groups" id="Group-3" visible="false">
-            <a-entity scale=" 0.9 0.9 0.9" class="Dote" template="src: #plane" data-src="#Scene-1" data-thumb="#Arrow-1"
-                position="4 0 3" rotation="200 20 173" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
-            </a-entity>
 
-            <a-entity scale=" 1 1 1" class="Dote" template="src: #plane" data-src="#Scene-2" data-thumb="#Arrow-1"
-                position="-.2 -1 8" rotation="200 20 173" the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2">
-            </a-entity>
+
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="4 0 3"
+                rotation="200 20 173" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
+            </a-plane>
+
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="-.2 -1 8"
+                rotation="200 20 173" the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2">
+            </a-plane>
         </a-entity>
 
         <!-- Group-4 -->
         <a-entity scale="0 0 0" class="groups" id="Group-4" visible="false">
 
-            <a-entity scale=" 1 1 1" class="Dote" template="src: #plane" data-src="#Scene-5" data-thumb="#Arrow-1"
-                position="0 -1 10" rotation="200 20 173" the_dote="Name_of_dote: Dote-5 ; Group_to_activate: Group-5">
-            </a-entity>
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="0 -1 10"
+                rotation="200 20 173" the_dote="Name_of_dote: Dote-5 ; Group_to_activate: Group-5">
+            </a-plane>
 
-            <a-entity scale=" 1 1 1" class="Dote" template="src: #plane" data-src="#Scene-1" data-thumb="#Arrow-1"
-                position="-6 -1 -6" rotation="-90 -100 180"
-                the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
-            </a-entity>
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="-6 -1 -6"
+                rotation="-90 -100 180" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
+            </a-plane>
 
 
         </a-entity>
@@ -299,14 +292,16 @@
         <!-- Group-5 -->
         <a-entity scale="0 0 0" class="groups" id="Group-5" visible="false">
 
-            <a-entity scale=" 1 1 1" class="Dote" template="src: #plane" data-src="#Scene-4" data-thumb="#Arrow-1"
-                position="0 -1 -8" rotation="0 0 0" the_dote="Name_of_dote: Dote-4 ; Group_to_activate: Group-4">
-            </a-entity>
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="0 -1 -8"
+                rotation="0 0 0" the_dote="Name_of_dote: Dote-4 ; Group_to_activate: Group-4">
+            </a-plane>
 
-            <a-entity scale=" 1 1 1" class="Dote" template="src: #plane" data-src="#Scene-1" data-thumb="#Arrow-1"
+            <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="0 -1 -8"
                 position="-6 -1 9" rotation="-110 -100 180"
                 the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
-            </a-entity>
+            </a-plane>
+
+
 
 
         </a-entity>
@@ -864,8 +859,6 @@
             },
         });
 
-
-
         // window.addEventListener('load', (event) => {
         //     let vrButton = document.querySelector('.a-enter-vr-button ')
         //     vrButton.addEventListener('click', () => {
@@ -876,9 +869,25 @@
 
 
         let groups = document.querySelectorAll('.groups')
+        // id = "image-360" radius = "500" src = "#Scene-1"
+        let the_sky = document.querySelector('#image-360')
         let big_pintings_containers = document.querySelectorAll('.big-pintings-containers')
         console.log(big_pintings_containers);
         console.log(groups);
+        // let all_Dot = querySelectorAll('.Dote')
+
+        // AFRAME.registerComponent('the_dote_handler', {
+        //     schema: { the_dote_to_handler: { type: 'string', default: '#Name', }, Group_to_activate: { type: 'string', default: '#Position', } },
+        //     //!Run permanatli
+        //     // tick: function () {
+        //     // },
+        //     //Run Ones
+        //     init: function () {
+        //         this.el.addEventListener('click', () => {
+        //         });
+        //     }
+        // });
+
         AFRAME.registerComponent('the_dote', {
             //The schema is the container for all the propertises
             schema: { Name_of_dote: { type: 'string', default: '#Name', }, Group_to_activate: { type: 'string', default: '#Position', } },
@@ -893,43 +902,42 @@
                 let Group_to_activate = this.data.Group_to_activate
                 let The_Arrow = this.el
 
+                this.el.setAttribute('color', '#000')
+                this.el.setAttribute('event-set__mouseenter', "scale: 1.2 1.2 1")
+                this.el.setAttribute('event-set__mouseleave', "scale: 0.9 0.9 0.9")
 
 
                 this.el.addEventListener('click', (theDote) => {
-                    The_Arrow.setAttribute('scale', '2 2 2')
-                    // The_Arrow
-
-                    // if (condition) {
-                    //     Dote_Name
-                    // }
-                    // console.log('OK');
-
                     big_pintings_containers.forEach(element => {
                         element.setAttribute('visible', 'false')
                         element.setAttribute('scale', '0 0 0')
                     });
-                    The_Arrow.setAttribute('scale', '2 2 2')
-
                     switch (Dote_Name) {
                         case 'Dote-1':
+
                             big_pintings_containers[0].setAttribute('visible', 'true')
                             big_pintings_containers[0].setAttribute('scale', '1 1 1')
+                            the_sky.setAttribute('src', '#Scene-1')
                             break;
                         case 'Dote-2':
                             big_pintings_containers[1].setAttribute('visible', 'true')
                             big_pintings_containers[1].setAttribute('scale', '1 1 1')
+                            the_sky.setAttribute('src', '#Scene-2')
                             break;
                         case 'Dote-3':
                             big_pintings_containers[2].setAttribute('visible', 'true')
                             big_pintings_containers[2].setAttribute('scale', '1 1 1')
+                            the_sky.setAttribute('src', '#Scene-3')
                             break;
                         case 'Dote-4':
                             big_pintings_containers[3].setAttribute('visible', 'true')
                             big_pintings_containers[3].setAttribute('scale', '1 1 1')
+                            the_sky.setAttribute('src', '#Scene-4')
                             break;
                         case 'Dote-5':
                             big_pintings_containers[4].setAttribute('visible', 'true')
                             big_pintings_containers[4].setAttribute('scale', '1 1 1')
+                            the_sky.setAttribute('src', '#Scene-5')
                             break;
                         default:
                             console.log('#####nimp');
@@ -985,7 +993,6 @@
                 var The_Picture = this.data.Pinting_Picture;
                 let TheElement = this.el;
                 this.el.addEventListener('click', function () {
-                    TheElement.setAttribute("opacity", "0.6");
                     console.log('##################');
                     console.log(The_Picture);
                     console.log('##################');
