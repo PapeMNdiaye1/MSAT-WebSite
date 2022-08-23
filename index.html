@@ -16,7 +16,7 @@
     <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
-
+    <script src="https://unpkg.com/aframe-html-shader@0.5.0/dist/aframe-html-shader.min.js"></script>
 </head>
 
 <body>
@@ -196,27 +196,17 @@
         inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js" ">
         <a-assets> -->
 
-    <a-scene the_scene cursor="rayOrigin: mouse"
-        inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js" ">
+    <a-scene the_scene cursor="rayOrigin: mouse">
         <a-assets>
-        <!-- <a-box log=" Hello, Box!">
-        </a-box> -->
-
-        <!-- <img id="Scene-1" src="./Style/Images/Scene-1.jpg"> -->
-        <!-- <img id="Scene-1" src="./Style/Images.png"> -->
-        <img id="Scene-1" src="./Style/Images/Scene-1.jpg">
-        <img id="Scene-2" src="./Style/Images/Scene-2.jpg">
-        <img id="Scene-3" src="./Style/Images/Scene-3.jpg">
-        <img id="Scene-4" src="./Style/Images/Scene-4.jpg">
-        <img id="Scene-5" src="./Style/Images/Scene-5.jpg">
-
-        <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
-        <img id="Arrow-2" src="./Style/Images/PNG/Arrow-2.png">
-        <img id="Arrow-3" src="./Style/Images/PNG/Arrow-3.png">
-        <img id="Arrow-4" src="./Style/Images/PNG/Arrow-4.png">
-        <!-- <img id="Arrow-4" src="./Style/Images/Tableaux/guis-guis.jpg"> -->
-        <!-- <img id="Arrow-4" src=""> -->
-
+            <img id="Scene-1" src="./Style/Images/Scene-1.jpg">
+            <img id="Scene-2" src="./Style/Images/Scene-2.jpg">
+            <img id="Scene-3" src="./Style/Images/Scene-3.jpg">
+            <img id="Scene-4" src="./Style/Images/Scene-4.jpg">
+            <img id="Scene-5" src="./Style/Images/Scene-5.jpg">
+            <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
+            <!-- <img id="Arrow-2" src="./Style/Images/PNG/Arrow-2.png">
+            <img id="Arrow-3" src="./Style/Images/PNG/Arrow-3.png">
+            <img id="Arrow-4" src="./Style/Images/PNG/Arrow-4.png"> -->
         </a-assets>
 
         <!-- VR-controls -->
@@ -230,6 +220,13 @@
             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
         </a-sky>
+
+        <!-- <a-entity position="0 0 20">
+            <a-plane material="shader: html; target: #the_crad" position="0 0 0">
+                <a-plane data-clickable onclick="close()" position="0 0 -.1"></a-plane>
+            </a-plane>
+        </a-entity> -->
+
         <!-- ############################################################ -->
         <!-- ############################################################ -->
         <!-- ############################################################ -->
@@ -287,7 +284,6 @@
 
 
         </a-entity>
-
         <!-- Group-5 -->
         <a-entity scale="0 0 0" class="groups" id="Group-5" visible="false">
 
@@ -844,6 +840,7 @@
             </a-entity>
         </a-entity>
     </a-scene>
+
     <script>
 
         let inVR = false;
@@ -854,34 +851,11 @@
             },
         });
 
-        // window.addEventListener('load', (event) => {
-        //     let vrButton = document.querySelector('.a-enter-vr-button ')
-        //     vrButton.addEventListener('click', () => {
-        //         inVR = true;
-        //         console.log('inVR');
-        //     });
-        // });
-
-
         let groups = document.querySelectorAll('.groups')
-        // id = "image-360" radius = "500" src = "#Scene-1"
         let the_sky = document.querySelector('#image-360')
         let big_pintings_containers = document.querySelectorAll('.big-pintings-containers')
         console.log(big_pintings_containers);
         console.log(groups);
-        // let all_Dot = querySelectorAll('.Dote')
-
-        // AFRAME.registerComponent('the_dote_handler', {
-        //     schema: { the_dote_to_handler: { type: 'string', default: '#Name', }, Group_to_activate: { type: 'string', default: '#Position', } },
-        //     //!Run permanatli
-        //     // tick: function () {
-        //     // },
-        //     //Run Ones
-        //     init: function () {
-        //         this.el.addEventListener('click', () => {
-        //         });
-        //     }
-        // });
 
         AFRAME.registerComponent('the_dote', {
             //The schema is the container for all the propertises
@@ -1032,7 +1006,7 @@
 
 
 
-    <script id="plane" type="text/html">
+    <!-- <script id="plane" type="text/html">
 
     <a-entity class="link" geometry="primitive: plane; height: 1; width: 1" 
     material="shader: flat; src: ${thumb} ; transparent:true"
@@ -1041,7 +1015,7 @@
          event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: ${src}">
      </a-entity>
 
-     </script>
+     </script> -->
 </body>
 
 </html>
