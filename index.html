@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MSAD</title>
-    <!-- <script rel="stylesheet" href="/Style/Style.css"></script> -->
+    <script rel="stylesheet" href="/Style/Style.css"></script>
     <link rel="stylesheet" href="/Style/Style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +16,12 @@
     <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-html-shader@0.5.0/dist/aframe-html-shader.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-html-shader@0.5.0/dist/aframe-html-shader.min.js"></script> -->
+    <script src="https://unpkg.com/aframe-html-shader/dist/aframe-html-shader.min.js"></script>
 </head>
 
 <body>
-    <style>
+    <!-- <style>
         * {
             margin: 0em;
             padding: 0em;
@@ -48,7 +49,7 @@
             -webkit-box-pack: center;
             -ms-flex-pack: center;
             justify-content: center;
-            display: none;
+            /* display: none; */
         }
 
         #the_crad_container #the_crad {
@@ -165,7 +166,7 @@
         }
 
         /*# sourceMappingURL=Style.css.map */
-    </style>
+    </style> -->
 
     <div id="the_crad_container">
         <div id="the_crad">
@@ -191,10 +192,7 @@
 
     </div>
 
-    <!-- <a-scene 
-    cursor="rayOrigin: mouse"
-        inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js" ">
-        <a-assets> -->
+
 
     <a-scene the_scene cursor="rayOrigin: mouse">
         <a-assets>
@@ -204,9 +202,6 @@
             <img id="Scene-4" src="./Style/Images/Scene-4.jpg">
             <img id="Scene-5" src="./Style/Images/Scene-5.jpg">
             <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
-            <!-- <img id="Arrow-2" src="./Style/Images/PNG/Arrow-2.png">
-            <img id="Arrow-3" src="./Style/Images/PNG/Arrow-3.png">
-            <img id="Arrow-4" src="./Style/Images/PNG/Arrow-4.png"> -->
         </a-assets>
 
         <!-- VR-controls -->
@@ -221,11 +216,6 @@
             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
         </a-sky>
 
-        <!-- <a-entity position="0 0 20">
-            <a-plane material="shader: html; target: #the_crad" position="0 0 0">
-                <a-plane data-clickable onclick="close()" position="0 0 -.1"></a-plane>
-            </a-plane>
-        </a-entity> -->
 
         <!-- ############################################################ -->
         <!-- ############################################################ -->
@@ -964,9 +954,9 @@
                 this.el.addEventListener('click', function () {
 
                     the_art_title.innerHTML = The_Name
-                    the_art_author.innerHTML = `par:${The_Author}`
+                    the_art_author.innerHTML = `${The_Author}`
                     the_art_price.innerHTML = The_Price
-                    the_art_size.innerHTML = The_Size
+                    the_art_size.innerHTML = `DIMENTION:${The_Size}`
                     the_crad_container.style.display = 'flex'
                     the_art_picture.setAttribute("src", `${The_Picture}`)
 
@@ -1006,16 +996,7 @@
 
 
 
-    <!-- <script id="plane" type="text/html">
 
-    <a-entity class="link" geometry="primitive: plane; height: 1; width: 1" 
-    material="shader: flat; src: ${thumb} ; transparent:true"
-        sound="on: click; src: #click-sound" 
-        event-set__mouseenter="scale: 1.2 1.2 1"
-         event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: ${src}">
-     </a-entity>
-
-     </script> -->
 </body>
 
 </html>
