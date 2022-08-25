@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-html-shader/dist/aframe-html-shader.min.js"></script>
+    <!-- ########################################################################################### -->
+    <!-- <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/aframe-html-shader/dist/aframe-html-shader.min.js"></script> -->
 </head>
 
 <body>
@@ -211,9 +212,9 @@
             <img id="Scene-4" src="./Style/Images/Scene-4.jpg">
             <img id="Scene-5" src="./Style/Images/Scene-5.jpg">
             <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
+            <source id="the_sound" src="./Style/MediTation_From_West_Africa.mp3" type="audio/mpeg">
         </a-assets>
 
-        <!-- VR-controls -->
         <a-entity laser-controls="hand: left"
             raycaster="objects: [data-clickable] ; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
         <a-entity laser-controls="hand: right"
@@ -225,7 +226,8 @@
             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
         </a-sky>
 
-
+        <!-- ############################################################ -->
+        <a-sound position="0 0 0" sound="src: #the_sound; autoplay: true; loop: true" allow="autoplay"></a-sound>
         <!-- ############################################################ -->
         <!-- ############################################################ -->
         <!-- ############################################################ -->
@@ -258,7 +260,6 @@
                 rotation="-50 0 0" the_dote="Name_of_dote: Dote-3 ; Group_to_activate: Group-3">
             </a-plane>
         </a-entity>
-
         <!-- Group-3 -->
         <a-entity scale=" 0 0 0" class="groups" id="Group-3" visible="false">
             <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="4.2 -1 4"
@@ -269,7 +270,6 @@
                 rotation="200 20 173" the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2">
             </a-plane>
         </a-entity>
-
         <!-- Group-4 -->
         <a-entity scale="0 0 0" class="groups" id="Group-4" visible="false">
 
@@ -303,7 +303,7 @@
             <!-- Row-0 -->
             <a-entity position="0 0 0" rotation="0 181 0" class="pintings-containers" id="pinting-container-0">
 
-                <a-plane data-clickable scale="150 120 0" class="pintings clickable" rotation="0 0 0"
+                <a-plane data-clickable scale="150 120 0" opacity="0" class="pintings clickable" rotation="0 0 0"
                     position="-0 100 -400" color="#000" the_pintings="Pinting_Name : GUISS GUISS ;
                         Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                         Autor_Name :Amicale des étudiants des MSAD ;
@@ -316,7 +316,7 @@
             <!-- Row-1 -->
             <a-entity position="0 0 0" rotation="0 149 0" class="pintings-containers" id="pinting-container-1">
 
-                <a-plane data-clickable scale="100 120 0" class="pintings clickable" rotation="0 0 0"
+                <a-plane data-clickable scale="100 120 0" opacity="0" class="pintings clickable" rotation="0 0 0"
                     position="-0 220 -400" color="#000" the_pintings="Pinting_Name :Femme Peulh ;
                          Pinting_Picture: ./Style/Images/Tableaux/femme-peulh.jpg ;
                           Autor_Name :Mamadou Wade;
@@ -324,7 +324,7 @@
                            Price : 4.212 000 francs (6480 € )">
                 </a-plane>
 
-                <a-plane data-clickable scale="90 200 0" class="pintings clickable" rotation="0 0 0"
+                <a-plane data-clickable scale="90 200 0" opacity="0" class="pintings clickable" rotation="0 0 0"
                     position="-0 20 -400" color="#000" the_pintings="Pinting_Name :Tangouna Mbaar;
                     Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                         Autor_Name :Ousmane Sy;
@@ -336,7 +336,7 @@
 
             <!-- Row-2 -->
             <a-entity position="0 0 0" rotation="0 111 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane data-clickable scale="175 140 0" class="pintings clickable" rotation="0 0 0"
+                <a-plane data-clickable scale="175 140 0" opacity="0" class="pintings clickable" rotation="0 0 0"
                     position="-0 30 -400" color="#000" the_pintings="Pinting_Name :Le Maitre Du Bois Sacré;
                     Pinting_Picture: ./Style/Images/Tableaux/maitre-du-bois-saccre.jpg;
                     Autor_Name :ANSOUMANA DIEDHIOU;
@@ -344,7 +344,7 @@
                                         Price : 6.799 000 francs (10460 € ) ">
                 </a-plane>
 
-                <a-plane data-clickable scale="150 160 0" class="pintings clickable" rotation="0 0 0"
+                <a-plane data-clickable scale="150 160 0" opacity="0" class="pintings clickable" rotation="0 0 0"
                     position="-0 210 -400" color="#000" the_pintings="Pinting_Name :JOMBAJO;
                         Pinting_Picture: ./Style/Images/Tableaux/Jombojo.jpg;
                         Autor_Name :KALIDOU KASSE;
@@ -355,7 +355,7 @@
 
             <!-- Row-3 -->
             <a-entity position=" 0 0 0" rotation="0 70 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane data-clickable scale="100 145 0" class="pintings clickable" rotation="0 0 0"
+                <a-plane data-clickable scale="100 145 0" opacity="0" class="pintings clickable" rotation="0 0 0"
                     position="-0 12 -400" color="#000" the_pintings="Pinting_Name : Diala Ndama;
                         Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
                         Autor_Name :ALASSANE.M.DIOP;
@@ -363,7 +363,7 @@
                         Price : 5.109 000 francs (7860 €)">
                 </a-plane>
 
-                <a-plane data-clickable scale="250 140 0" class="pintings clickable" rotation="33 -1.8 -2"
+                <a-plane data-clickable scale="250 140 0" opacity="0" class="pintings clickable" rotation="33 -1.8 -2"
                     position="-0 270 -400" color="#000" the_pintings="Pinting_Name :Cinquantenaire;
                         Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
                         Autor_Name :MSAD;
@@ -374,7 +374,7 @@
 
             <!-- Row-4 -->
             <a-entity position=" 0 0 0" rotation="0 30.7 0" class="pintings-containers" id="pinting-container-2">
-                <a-plane data-clickable scale="100 100 0" class="pintings clickable" rotation="0 0 0"
+                <a-plane data-clickable scale="100 100 0" opacity="0" class="pintings clickable" rotation="0 0 0"
                     position="-0 30 -400" color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                         Pinting_Picture: ./Style/Images/Tableaux/NABOULE.jpg;
                         Autor_Name :Sény Gadiaga;
@@ -382,7 +382,7 @@
                         Price : 10.257 000 francs (15780 €)">
                 </a-plane>
 
-                <a-plane data-clickable scale="170 120 0" class="pintings clickable" rotation="10 6 -5"
+                <a-plane data-clickable scale="170 120 0" opacity="0" class="pintings clickable" rotation="10 6 -5"
                     position="-0 240 -400" color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                         Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                         Autor_Name :Sény Gadiaga;
@@ -394,7 +394,7 @@
             <!-- Row-5 -->
             <a-entity position="0 0 0" rotation="0 -2 0" class="pintings-containers" id="pinting-container-2">
 
-                <a-plane data-clickable scale="100 120 0" class="pintings clickable" rotation="0 0 0"
+                <a-plane data-clickable scale="100 120 0" opacity="0" class="pintings clickable" rotation="0 0 0"
                     position="-0 120 -400" color="#000" the_pintings="Pinting_Name :Tefess;
                         Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
                         Autor_Name :Mamadou Gaye;
@@ -839,16 +839,15 @@
             </a-entity>
         </a-entity>
     </a-scene>
-
     <script>
 
-        let inVR = false;
-        AFRAME.registerComponent('the_scene', {
-            tick: function () {
-                var sceneEl = this.el;
-                inVR = sceneEl.is('vr-mode');
-            },
-        });
+        // let inVR = false;
+        // AFRAME.registerComponent('the_scene', {
+        //     tick: function () {
+        //         var sceneEl = this.el;
+        //         inVR = sceneEl.is('vr-mode');
+        //     },
+        // });
 
         let groups = document.querySelectorAll('.groups')
         let the_sky = document.querySelector('#image-360')
@@ -857,20 +856,16 @@
         console.log(groups);
 
         AFRAME.registerComponent('the_dote', {
-            //The schema is the container for all the propertises
             schema: { Name_of_dote: { type: 'string', default: '#Name', }, Group_to_activate: { type: 'string', default: '#Position', } },
-            //!Run permanatli
-            // tick: function () {
-            // },
-            //Run Ones
+
             init: function () {
-                //get whats in the entity
                 var stringToLog = this.data;
                 let Dote_Name = this.data.Name_of_dote
                 let Group_to_activate = this.data.Group_to_activate
                 let The_Arrow = this.el
 
-                this.el.setAttribute('color', '#000')
+                this.el.setAttribute('color', '#fff')
+                this.el.setAttribute('opacity', '0.6')
                 this.el.setAttribute('event-set__mouseenter', "scale: 1.2 1.2 1")
                 this.el.setAttribute('event-set__mouseleave', "scale: 0.9 0.9 0.9")
 
@@ -882,7 +877,6 @@
                     });
                     switch (Dote_Name) {
                         case 'Dote-1':
-
                             big_pintings_containers[0].setAttribute('visible', 'true')
                             big_pintings_containers[0].setAttribute('scale', '1 1 1')
                             the_sky.setAttribute('src', '#Scene-1')
@@ -917,12 +911,9 @@
                         group.setAttribute('visible', 'false')
                         group.setAttribute('scale', '0 0 0')
                     });
-                    // setTimeout(() => {
                     the_group_to_activate.setAttribute('visible', 'true')
                     the_group_to_activate.setAttribute('scale', '1 1 1')
-                    // }, 300);
 
-                    console.log('####################');
 
                 });
             }
@@ -969,37 +960,11 @@
                     the_crad_container.style.display = 'flex'
                     the_art_picture.setAttribute("src", `${The_Picture}`)
 
-                    if (inVR) {
-                        //CODE FOR HTML SHADERS
-                    }
 
                 });
             }
         });
-        //###############################################################
-        //###############################################################
-        AFRAME.registerComponent('raycaster-listen', {
-            init: function () {
-                // Use events to figure out what raycaster is listening so we don't have to
-                // hardcode the raycaster.
-                this.el.addEventListener('raycaster-intersected', evt => {
-                    this.raycaster = evt.detail.el;
-                    console.log('#############');
-                });
-                this.el.addEventListener('raycaster-intersected-cleared', evt => {
-                    this.raycaster = null;
-                    console.log('#############x');
-                });
 
-            },
-
-            tick: function () {
-                if (!this.raycaster) { return; }  // Not intersecting.
-                let intersection = this.raycaster.components.raycaster.getIntersection(this.el);
-                if (!intersection) { return; }
-                console.log(intersection.point);
-            }
-        });
 
     </script>
 
