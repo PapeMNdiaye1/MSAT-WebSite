@@ -63,7 +63,7 @@
             display: -ms-grid;
             display: grid;
             grid-template-columns: repeat(3, 1fr) 2em;
-            grid-template-rows: repeat(1, 2em) 1fr repeat(7, 2em);
+            grid-template-rows: repeat(1, 2em) 1fr repeat(10, 2em);
         }
 
         #the_crad_container #the_crad #art_title {
@@ -76,14 +76,18 @@
             font-size: 1.4em;
         }
 
+        #le_créer_par {
+            grid-column: 3 / 5;
+            grid-row: 3;
+        }
+
         #the_crad_container #the_crad #art_author {
             -ms-grid-column: 3;
             -ms-grid-column-span: 2;
             grid-column: 3 / 5;
             -ms-grid-row: 3;
             -ms-grid-row-span: 1;
-            grid-row: 3/4;
-            font-size: 1.2em;
+            grid-row: 4;
         }
 
         #the_crad_container #the_crad #the_art_picture {
@@ -92,7 +96,7 @@
             grid-column: 1 / 3;
             -ms-grid-row: 2;
             -ms-grid-row-span: 7;
-            grid-row: 2 / 9;
+            grid-row: 2 / 10;
             width: 100%;
             height: 100%;
             display: -webkit-box;
@@ -110,12 +114,16 @@
             border-radius: .2em;
         }
 
+        #dimension_title {
+            grid-column: 3 / 5;
+            grid-row: 6;
+        }
+
         #the_crad_container #the_crad #the_art_size {
             -ms-grid-column: 3;
             -ms-grid-column-span: 2;
             grid-column: 3 / 5;
-            -ms-grid-row: 5;
-            grid-row: 5;
+            grid-row: 7;
             margin: auto .5 auto auto;
         }
 
@@ -123,9 +131,18 @@
             -ms-grid-column: 3;
             -ms-grid-column-span: 2;
             grid-column: 3 / 5;
-            -ms-grid-row: 7;
-            grid-row: 7;
+            grid-row: 9;
             margin: auto;
+        }
+
+        #btn_container {
+            grid-column: 3 / 5;
+            grid-row: 10;
+            background-color: aqua;
+            border-radius: .12%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         #the_crad_container #the_crad #close_crad {
@@ -176,6 +193,53 @@
         .a-enter-vr:hover {
             background: rgba(55, 55, 60, 0);
         }
+
+        @media all and (max-width:1000px) {
+            #the_crad_container #the_crad {
+                width: 88%;
+                border: #f1f1f1 .5em solid;
+            }
+
+            #art_title {
+                font-size: .6em;
+            }
+
+
+            #the_crad {
+                background: #f1f1f1;
+                width: 90%;
+                height: auto;
+            }
+
+            #art_title {
+                font-size: .7em;
+            }
+
+            #le_créer_par {
+                grid-column: 3 / 5;
+                grid-row: 3;
+                font-size: .9em;
+            }
+
+            #art_author {
+                grid-column: 3 / 5;
+                grid-row: 6;
+                font-size: .9em;
+            }
+
+            #btn_container {
+                grid-column: 3 / 5;
+                grid-row: 11;
+                font-size: .9em;
+            }
+
+            /* #the_art_picture {
+                grid-row: 2 / 12;
+
+            } */
+
+
+        }
     </style>
 
     <div id="the_crad_container">
@@ -183,19 +247,23 @@
             <div id="art_title">
                 TEFESS
             </div>
+            <div id="le_créer_par">Créer par</div>
             <div id='art_author'>
-                Par: Mamadou Gaye
+                Mamadou Gaye
             </div>
             <div id="the_art_price">
                 4.875 000 francs (7500 €)
             </div>
+            <dir id="dimension_title">Dimension</dir>
             <div id="the_art_size">
-                Dimension: 2.04/1.84
+                2.04/1.84
             </div>
 
             <div id="the_art_picture">
                 <img src="./Style/Images/Tableaux/cinquantenaire.jpg" width='90%' alt="Nimp">
             </div>
+
+            <div id="btn_container">hkjhhh</div>
             <div id="close_crad">
             </div>
         </div>
@@ -220,14 +288,13 @@
         <a-entity laser-controls="hand: right"
             raycaster="objects: [data-clickable] ; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
 
-
         <a-sky id="image-360" radius="500" src="#Scene-1"
             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
         </a-sky>
 
         <!-- ############################################################ -->
-        <a-sound position="0 0 0" sound="src: #the_sound; autoplay: true; loop: true" allow="autoplay"></a-sound>
+        <!-- <a-sound position="0 0 0" sound="src: #the_sound; autoplay: true; loop: true" allow="autoplay"></a-sound> -->
         <!-- ############################################################ -->
         <!-- ############################################################ -->
         <!-- ############################################################ -->
@@ -249,7 +316,6 @@
                 rotation="-64.3 -145 -11.6" the_dote="Name_of_dote: Dote-5 ; Group_to_activate: Group-5">
             </a-plane>
         </a-entity>
-
         <!-- Group-2. -->
         <a-entity scale=" 0 0 0" class="groups" id="Group-2" visible="false">
             <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true " position="4.2 -1 -4"
@@ -308,8 +374,9 @@
                         Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                         Autor_Name :Amicale des étudiants des MSAD ;
                         Size :2.92/4.48;
-                        Price : 17.004 000 francs (26160 € )">
+                        Price : 17.004 000 francs (26160 €)">
                 </a-plane>
+
 
             </a-entity>
 
@@ -387,8 +454,16 @@
                         Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                         Autor_Name :Sény Gadiaga;
                         Size : 2.36/3.34;
-                        Price : 10.257 000 francs (15780 € )">
+                        Price : 10.257 000 francs (15780 €);
+                        Name : Le_Chant_des_Tirailleurs_Sénégalais
+                        ">
                 </a-plane>
+
+                <a-plane scale="100 100 0" opacity="1" class="pintings_info" rotation="0 6 0" position="130 200 -340"
+                    color="#000" class="Le_Chant_des_Tirailleurs_Sénégalais"
+                    the_pintings_infos="Le_Chant_des_Tirailleurs_Sénégalais">
+                </a-plane>
+
             </a-entity>
 
             <!-- Row-5 -->
@@ -400,6 +475,10 @@
                         Autor_Name :Mamadou Gaye;
                         Size : 2.04/1.84;
                         Price : 4.875 000 francs (7500 €)">
+                </a-plane>
+
+                <a-plane scale="100 100 0" opacity="1" class="pintings_info Tefess" rotation="0 0 0"
+                    position="109 100 -400" class="Tefess" color="#000" the_pintings_infos="Tefess">
                 </a-plane>
 
             </a-entity>
@@ -841,17 +920,12 @@
     </a-scene>
     <script>
 
-        // let inVR = false;
-        // AFRAME.registerComponent('the_scene', {
-        //     tick: function () {
-        //         var sceneEl = this.el;
-        //         inVR = sceneEl.is('vr-mode');
-        //     },
-        // });
+
 
         let groups = document.querySelectorAll('.groups')
         let the_sky = document.querySelector('#image-360')
         let big_pintings_containers = document.querySelectorAll('.big-pintings-containers')
+        let pintings_info = document.querySelectorAll('.pintings_info')
         console.log(big_pintings_containers);
         console.log(groups);
 
@@ -956,15 +1030,46 @@
                     the_art_title.innerHTML = The_Name
                     the_art_author.innerHTML = `${The_Author}`
                     the_art_price.innerHTML = The_Price
-                    the_art_size.innerHTML = `DIMENTION:${The_Size}`
+                    the_art_size.innerHTML = `${The_Size}`
                     the_crad_container.style.display = 'flex'
                     the_art_picture.setAttribute("src", `${The_Picture}`)
+
+                    if (inVR) {
+                        let the_picture_infos = document.querySelector(`.${The_Name}`)
+                        console.log(the_picture_infos);
+                    }
 
 
                 });
             }
         });
 
+        AFRAME.registerComponent('the_pintings_infos', {
+            schema: {
+                Pinting_Name: { type: "string", default: "" },
+
+            },
+            init: function () {
+                this.el.setAttribute("opacity", "0");
+                // console.log(this.data);
+                // var The_Name = this.data.Pinting_Name;
+                // var The_Author = this.data.Autor_Name;
+                // var The_Price = this.data.Price;
+                // var The_Size = this.data.Size;
+                // var The_Picture = this.data.Pinting_Picture;
+                // let TheElement = this.el;
+                // this.el.addEventListener('click', function () {
+
+                //     the_art_title.innerHTML = The_Name
+                //     the_art_author.innerHTML = `${The_Author}`
+                //     the_art_price.innerHTML = The_Price
+                //     the_art_size.innerHTML = `DIMENTION:${The_Size}`
+                //     the_crad_container.style.display = 'flex'
+                //     the_art_picture.setAttribute("src", `${The_Picture}`)
+
+                // });
+            }
+        });
 
     </script>
 
