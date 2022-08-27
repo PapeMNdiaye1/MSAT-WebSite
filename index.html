@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MSAD</title>
 
+    <link rel="icon" href="./Style/Images/PNG/Fichier 1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -34,6 +35,34 @@
 
         .a-loader-title {
             background-color: black;
+        }
+
+        #the_scene {
+            cursor: default;
+        }
+
+        /* .a-canvas {
+            cursor: default !important;
+        } */
+
+        /* .a-grab-cursor {
+            cursor: default !important;
+        } */
+
+        .a-mouse-cursor-hover {
+            cursor: default !important;
+        }
+
+        .a-mouse-cursor-hover:active {
+            cursor: grab !important;
+        }
+
+        .pintings {
+            cursor: pointer !important;
+        }
+
+        .pintings:hover {
+            cursor: pointer !important;
         }
 
         #the_crad_container {
@@ -174,6 +203,7 @@
             transform: scale(1);
         }
 
+
         .a-enter-vr {
             background: rgba(55, 55, 60, 0);
         }
@@ -272,7 +302,7 @@
 
 
 
-    <a-scene the_scene cursor="rayOrigin: mouse">
+    <a-scene id="the_scene" the_scene cursor="rayOrigin: mouse">
         <a-assets>
             <img id="Scene-1" src="./Style/Images/Scene-1.jpg">
             <img id="Scene-2" src="./Style/Images/Scene-2.jpg">
@@ -280,6 +310,7 @@
             <img id="Scene-4" src="./Style/Images/Scene-5.jpg">
             <img id="Scene-5" src="./Style/Images/Scene-4.jpg">
             <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
+            <img id="Dote-1" src="./Style/Images/PNG/Dote_1.png">
             <source id="the_sound" src="./Style/MediTation_From_West_Africa.mp3" type="audio/mpeg">
         </a-assets>
 
@@ -293,7 +324,7 @@
             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
         </a-sky>
         <!-- ############################################################ -->
-        <a-sound position="0 0 0" sound="src: #the_sound; autoplay: true; loop: true" allow="autoplay"></a-sound>
+        <!-- <a-sound position="0 0 0" sound="src: #the_sound; autoplay: true; loop: true" allow="autoplay"></a-sound> -->
         <!-- ############################################################ -->
         <!-- ############################################################ -->
         <!-- ############################################################ -->
@@ -912,8 +943,9 @@
         let the_sky = document.querySelector('#image-360')
         let big_pintings_containers = document.querySelectorAll('.big-pintings-containers')
         let pintings_info = document.querySelectorAll('.pintings_info')
-        console.log(big_pintings_containers);
-        console.log(groups);
+        let the_cursor = document.querySelector('.a-mouse-cursor-hover')
+        // console.log(big_pintings_containers);
+        // console.log(groups);
 
         AFRAME.registerComponent('the_dote', {
             schema: { Name_of_dote: { type: 'string', default: '#Name', }, Group_to_activate: { type: 'string', default: '#Position', } },
@@ -928,6 +960,7 @@
                 this.el.setAttribute('opacity', '0.6')
                 this.el.setAttribute('event-set__mouseenter', "scale: 1.2 1.2 1")
                 this.el.setAttribute('event-set__mouseleave', "scale: 0.9 0.9 0.9")
+
 
 
                 this.el.addEventListener('click', (theDote) => {
@@ -986,8 +1019,11 @@
         let the_art_price = document.querySelector('#the_art_price')
         let the_art_size = document.querySelector('#the_art_size')
         let the_art_picture = document.querySelector('#the_art_picture').childNodes[1]
-        console.log(the_art_picture);
+        // console.log(the_art_picture);
         the_close_crad.addEventListener('click', function () {
+            the_crad_container.style.display = 'none'
+        });
+        the_crad_container.addEventListener('click', function () {
             the_crad_container.style.display = 'none'
         });
 
@@ -1000,8 +1036,10 @@
                 Price: { type: "string", default: "" }
             },
             init: function () {
+                this.el.setAttribute('color', '#fff')
                 this.el.setAttribute("opacity", "0");
-                console.log(this.data);
+                this.el.setAttribute("material", "src: #Dote-1; transparent: true");
+                // console.log(this.data);
                 var The_Name = this.data.Pinting_Name;
                 var The_Author = this.data.Autor_Name;
                 var The_Price = this.data.Price;
@@ -1016,13 +1054,27 @@
                     the_art_size.innerHTML = `${The_Size}`
                     the_crad_container.style.display = 'flex'
                     the_art_picture.setAttribute("src", `${The_Picture}`)
-                    console.log(the_art_picture.height);
+                    // console.log(the_art_picture.height);
                     if (The_Name == 'Tangouna Mbaar') {
                         the_art_picture.setAttribute("width", `70%`)
                     } else {
                         the_art_picture.setAttribute("width", `90%`)
                     }
                 });
+
+                // this.el.setAttribute('event-set__mouseenter', "opacity: 1")
+                // this.el.setAttribute('event-set__mouseenter', "opacity: .01"
+                // this.el.setAttribute('event-set__mouseleave', "opacity: 0")
+
+                // this.el.addEventListener('mouseover', function () {
+                //     the_cursor.cursor = 'pointer !important'
+                //     console.log('mouseover');
+
+                // })
+                // this.el.addEventListener('mouseout', function () {
+                //     the_cursor.style.cursor = 'default !important'
+                //     console.log('mouseout');
+                // })
             }
         });
         // AFRAME.registerComponent('the_pintings_infos', {
