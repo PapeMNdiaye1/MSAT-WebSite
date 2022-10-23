@@ -321,18 +321,19 @@
             <source id="the_sound" src="./Style/MediTation_From_West_Africa.mp3" type="audio/mpeg">
         </a-assets>
 
-        <!--! ##################################################### -->
-        <a-plane id="the-plane" material="src: #Tableaux-1; transparent: true" scale="1 1 1" position="0.5 1 -2.4"
-            color="#CCC" height="2" width="2" the_plane>
-            <a-plane material="src: #Dote-3; transparent: true" scale=" 0.1 0.1 0.1" position=".3 1 1" color="#000"
-                height="2" width="2" close_the_plane>
-            </a-plane>
-        </a-plane>
-        <!--! ##################################################### -->
         <a-entity laser-controls="hand: left"
             raycaster="objects: [data-clickable] ; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
         <a-entity laser-controls="hand: right"
             raycaster="objects: [data-clickable] ; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
+
+        <!--! ##################################################### -->
+        <a-plane data-clickable id="the-plane" material="src: #Tableaux-1; transparent: true" scale="1 1 1"
+            position="0.5 1 -2.4" color="#CCC" height="2" width="2" the_plane>
+            <a-plane data-clickable material="src: #Dote-3; transparent: true" scale=" 0.1 0.1 0.1" position=".3 1 1"
+                color="#000" height="2" width="2" close_the_plane>
+            </a-plane>
+        </a-plane>
+        <!--! ##################################################### -->
 
         <a-sky id="image-360" radius="500" src="#Scene-1"
             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
