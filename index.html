@@ -18,8 +18,8 @@
     <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
     <!-- ########################################################################################### -->
     <!-- <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script> -->
-    <script src="https://unpkg.com/aframe-html-shader@0.5.0/dist/aframe-html-shader.min.js"></script>
-    <script src="https://unpkg.com/aframe-html-shader@1.3.0/dist/aframe-html-shader.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-html-shader@0.5.0/dist/aframe-html-shader.min.js"></script>
+    <script src="https://unpkg.com/aframe-html-shader@1.3.0/dist/aframe-html-shader.min.js"></script> -->
 </head>
 
 <body>
@@ -307,6 +307,8 @@
 
     <a-scene id="the_scene" the_scene cursor="rayOrigin: mouse">
         <a-assets>
+            <img id="Tableaux-1" src="./Style/Images/PNG/Info-1(JOMBAJO).png">
+
             <img id="Scene-1" src="./Style/Images/Scene-1.jpg">
             <img id="Scene-2" src="./Style/Images/Scene-2.jpg">
             <img id="Scene-3" src="./Style/Images/Scene-3.jpg">
@@ -314,10 +316,19 @@
             <img id="Scene-5" src="./Style/Images/Scene-4.jpg">
             <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
             <img id="Dote-1" src="./Style/Images/PNG/Dote_1.png">
-            <!-- <img id="Dote-1" src="./Style/Images/PNG/Dote_2.png"> -->
+            <img id="Dote-2" src="./Style/Images/PNG/Dote_2.png">
+            <img id="Dote-3" src="./Style/Images/PNG/Dote_3.png">
             <source id="the_sound" src="./Style/MediTation_From_West_Africa.mp3" type="audio/mpeg">
         </a-assets>
 
+        <!--! ##################################################### -->
+        <a-plane id="the-plane" material="src: #Tableaux-1; transparent: true" scale="1 1 1" position="0.5 1 -2.4"
+            color="#CCC" height="2" width="2" the_plane>
+            <a-plane material="src: #Dote-3; transparent: true" scale=" 0.1 0.1 0.1" position=".3 1 1" color="#000"
+                height="2" width="2" close_the_plane>
+            </a-plane>
+        </a-plane>
+        <!--! ##################################################### -->
         <a-entity laser-controls="hand: left"
             raycaster="objects: [data-clickable] ; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
         <a-entity laser-controls="hand: right"
@@ -328,7 +339,7 @@
             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
         </a-sky>
         <!-- ############################################################ -->
-        <a-sound position="0 0 0" sound="src: #the_sound; autoplay: true; loop: true" allow="autoplay"></a-sound>
+        <!-- <a-sound position="0 0 0" sound="src: #the_sound; autoplay: true; loop: true" allow="autoplay"></a-sound> -->
         <!-- ################################################################## -->
         <!-- ###########################ARROWS################################# -->
         <!-- ################################################################## -->
@@ -935,10 +946,10 @@
 
                 <a-plane data-clickable scale="65 65 0" class="pintings clickable" rotation="0 -30 0"
                     position="-0 -17 -350" color="#000" the_pintings="Pinting_Name :Tefess;
-                                        Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
-                                        Autor_Name :Mamadou Gaye;
-                                        Size : 2.04/1.84;
-                                        Price : 4.875 000 francs (7500 €)">
+                Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
+                Autor_Name :Mamadou Gaye;
+                Size : 2.04/1.84;
+                Price : 4.875 000 francs (7500 €)">
                 </a-plane>
 
             </a-entity>
@@ -947,12 +958,28 @@
     <script>
 
 
+        // let inVR = false;
+        // AFRAME.registerComponent('the_scene', {
+        //     tick: function () {
+        //         var sceneEl = this.el;
+        //         inVR = sceneEl.is('vr-mode');
+        //     },
+        // });
+
+
 
         let groups = document.querySelectorAll('.groups')
+        // let ThePlane = document.querySelectorAll('#the-plane')
         let the_sky = document.querySelector('#image-360')
         let big_pintings_containers = document.querySelectorAll('.big-pintings-containers')
         let pintings_info = document.querySelectorAll('.pintings_info')
         let the_cursor = document.querySelector('.a-mouse-cursor-hover')
+
+        //! #######################################################
+        let ThePlane = document.querySelector('#the-plane')
+
+
+        //! #######################################################
         // console.log(big_pintings_containers);
         // console.log(groups);
 
@@ -1057,6 +1084,7 @@
                 var The_Picture = this.data.Pinting_Picture;
                 let TheElement = this.el;
                 the_art_picture.setAttribute("width", `90%`)
+
                 this.el.addEventListener('click', function () {
                     the_art_title.innerHTML = The_Name
                     the_art_author.innerHTML = `${The_Author}`
@@ -1064,12 +1092,21 @@
                     the_art_size.innerHTML = `${The_Size}`
                     the_crad_container.style.display = 'flex'
                     the_art_picture.setAttribute("src", `${The_Picture}`)
+                    ThePlane.setAttribute("scale", "1 1 1");
+
                     // console.log(the_art_picture.height);
                     if (The_Name == 'Tangouna Mbaar') {
                         the_art_picture.setAttribute("width", `70%`)
                     } else {
                         the_art_picture.setAttribute("width", `90%`)
                     }
+                    //#######################################################
+
+                    ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                    //#######################################################
+
+
+
                 });
                 //#######################################################
 
@@ -1099,6 +1136,38 @@
             }
         });
         //#######################################################
+        AFRAME.registerComponent('the_plane', {
+            // schema: {
+            //     Plane_Name: { type: "string", default: "" },
+            // },
+            init: function () {
+                ThePlane.setAttribute("material", "src: #Dote-2; transparent: true");
+
+                this.el.addEventListener('click', function () {
+                    // the_cursor.cursor = 'pointer !important'
+                    console.log('the click on Plan');
+                })
+
+            }
+
+        });
+        //!######################################################
+        AFRAME.registerComponent('close_the_plane', {
+            // schema: {
+            //     Plane_Name: { type: "string", default: "" },
+            // },
+            init: function () {
+                this.el.setAttribute('event-set__mouseenter', "scale", ".15 .15 .15")
+                this.el.setAttribute('event-set__mouseleave', "scale", ".1 .1 .1")
+
+                this.el.addEventListener('click', function () {
+                    ThePlane.setAttribute("scale", "0 0 0");
+                    console.log('close On Plan');
+                })
+
+            }
+
+        });
     </script>
 </body>
 
