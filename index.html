@@ -16,7 +16,10 @@
     <!-- ########################################################################################### -->
     <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
-    <!-- <script src="https://unpkg.com/aframe-html-shader/dist/aframe-html-shader.min.js"></script> -->
+    <!-- ########################################################################################### -->
+    <!-- <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script> -->
+    <script src="https://unpkg.com/aframe-html-shader@0.5.0/dist/aframe-html-shader.min.js"></script>
+    <script src="https://unpkg.com/aframe-html-shader@1.3.0/dist/aframe-html-shader.min.js"></script>
 </head>
 
 <body>
@@ -311,6 +314,7 @@
             <img id="Scene-5" src="./Style/Images/Scene-4.jpg">
             <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
             <img id="Dote-1" src="./Style/Images/PNG/Dote_1.png">
+            <!-- <img id="Dote-1" src="./Style/Images/PNG/Dote_2.png"> -->
             <source id="the_sound" src="./Style/MediTation_From_West_Africa.mp3" type="audio/mpeg">
         </a-assets>
 
@@ -325,11 +329,12 @@
         </a-sky>
         <!-- ############################################################ -->
         <a-sound position="0 0 0" sound="src: #the_sound; autoplay: true; loop: true" allow="autoplay"></a-sound>
-        <!-- ############################################################ -->
-        <!-- ############################################################ -->
-        <!-- ############################################################ -->
+        <!-- ################################################################## -->
+        <!-- ###########################ARROWS################################# -->
+        <!-- ################################################################## -->
         <!-- Group-1. -->
         <a-entity scale="1 1 1" class="groups" id="Group-1" visible="true">
+
             <a-plane data-clickable class="pintings clickable" position="0 -1 6" rotation="-151.5 8.6 173"
                 material="src: #Arrow-1; transparent:true" the_dote="Name_of_dote: Dote-2 ; Group_to_activate: Group-2">
             </a-plane>
@@ -345,9 +350,11 @@
             <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true" position="6.5 -1 2.4"
                 rotation="-64.3 -145 -11.6" the_dote="Name_of_dote: Dote-5 ; Group_to_activate: Group-5">
             </a-plane>
+
         </a-entity>
         <!-- Group-2. -->
         <a-entity scale=" 0 0 0" class="groups" id="Group-2" visible="false">
+
             <a-plane data-clickable class="Dote" material="src: #Arrow-1; transparent:true " position="4.2 -1 -4"
                 rotation="-50 -55 0" the_dote="Name_of_dote: Dote-1 ; Group_to_activate: Group-1">
             </a-plane>
@@ -391,15 +398,14 @@
             </a-plane>
 
         </a-entity>
-        <!-- ############################################################ -->
-        <!-- ############################################################ -->
-        <!-- ############################################################ -->
+        <!-- ################################################################# -->
+        <!-- ##########################SCEAN################################## -->
+        <!-- ################################################################# -->
         <a-entity scale="1 1 1 " class="big-pintings-containers" id="big-pintings-containers-1" visible="true">
-
             <!-- Row-0 -->
             <a-entity position="0 0 0" rotation="0 181 0" class="pintings-containers" id="pinting-container-0">
 
-                <a-plane data-clickable scale="150 120 0" opacity="0" class="pintings clickable" rotation="0 0 0"
+                <a-plane data-clickable scale="150 140 0" opacity="0" class="pintings clickable" rotation="0 0 0"
                     position="-0 100 -400" color="#000" the_pintings="Pinting_Name : GUISS GUISS ;
                         Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                         Autor_Name :Amicale des étudiants des MSAD ;
@@ -419,8 +425,8 @@
                            Price : 4.212 000 francs (6480 € )">
                 </a-plane>
 
-                <a-plane data-clickable scale="90 200 0" opacity="0" class="pintings clickable" rotation="0 0 0"
-                    position="-0 20 -400" color="#000" the_pintings="Pinting_Name :Tangouna Mbaar;
+                <a-plane data-clickable scale="130 190 0" opacity="0" class="pintings clickable" rotation="0 0 0"
+                    position="-0 40 -400" color="#000" the_pintings="Pinting_Name :Tangouna Mbaar;
                     Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                         Autor_Name :Ousmane Sy;
                         Size :3.04/1.50;
@@ -446,18 +452,17 @@
                         Price : 9.568 000 francs (14720 €)">
                 </a-plane>
             </a-entity>
-
             <!-- Row-3 -->
             <a-entity position=" 0 0 0" rotation="0 70 0" class="pintings-containers" id="pinting-container-2">
                 <a-plane data-clickable scale="100 145 0" opacity="0" class="pintings clickable" rotation="0 0 0"
-                    position="-0 12 -400" color="#000" the_pintings="Pinting_Name : Diala Ndama;
+                    position="-0 22 -400" color="#000" the_pintings="Pinting_Name : Diala Ndama;
                         Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
                         Autor_Name :ALASSANE.M.DIOP;
                         Size : 2.33/1.60;
                         Price : 5.109 000 francs (7860 €)">
                 </a-plane>
 
-                <a-plane data-clickable scale="250 140 0" opacity="0" class="pintings clickable" rotation="33 -1.8 -2"
+                <a-plane data-clickable scale="250 170 0" opacity="0" class="pintings clickable" rotation="33 -1.8 -2"
                     position="-0 270 -400" color="#000" the_pintings="Pinting_Name :Cinquantenaire;
                         Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
                         Autor_Name :MSAD;
@@ -465,7 +470,6 @@
                         Price : 10.660 000 francs (16400 €)">
                 </a-plane>
             </a-entity>
-
             <!-- Row-4 -->
             <a-entity position=" 0 0 0" rotation="0 30.7 0" class="pintings-containers" id="pinting-container-2">
                 <a-plane data-clickable scale="100 100 0" opacity="0" class="pintings clickable" rotation="0 0 0"
@@ -476,7 +480,7 @@
                         Price : 10.257 000 francs (15780 €)">
                 </a-plane>
 
-                <a-plane data-clickable scale="170 120 0" opacity="0" class="pintings clickable" rotation="10 6 -5"
+                <a-plane data-clickable scale="170 155 0" opacity="0" class="pintings clickable" rotation="10 6 -5"
                     position="-0 240 -400" color="#000" the_pintings="Pinting_Name :Le Chant des Tirailleurs Sénégalais;
                         Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                         Autor_Name :Sény Gadiaga;
@@ -484,36 +488,41 @@
                         Price : 10.257 000 francs (15780 €);
                         Name : Le_Chant_des_Tirailleurs_Sénégalais">
                 </a-plane>
-
+                <!-- ############################################################### -->
                 <!-- <a-plane scale="100 100 0" opacity="1" class="pintings_info" rotation="0 6 0" position="130 200 -340"
                     color="#000" class="Le_Chant_des_Tirailleurs_Sénégalais"
                     the_pintings_infos="Le_Chant_des_Tirailleurs_Sénégalais">
                 </a-plane> -->
+                <!-- ############################################################### -->
             </a-entity>
-
             <!-- Row-5 -->
             <a-entity position="0 0 0" rotation="0 -2 0" class="pintings-containers" id="pinting-container-2">
 
                 <a-plane data-clickable scale="100 120 0" opacity="0" class="pintings clickable" rotation="0 0 0"
                     position="-0 120 -400" color="#000" the_pintings="Pinting_Name :Tefess;
-                        Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
-                        Autor_Name :Mamadou Gaye;
-                        Size : 2.04/1.84;
-                        Price : 4.875 000 francs (7500 €)">
+                    Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
+                    Autor_Name :Mamadou Gaye;
+                    Size : 2.04/1.84;
+                    Price : 4.875 000 francs (7500 €)">
+                    <!-- <a-plane scale="1 .5 0" opacity="1" class="pintings_info Tefess" rotation="0 0 0"
+                        position="0 00 -00" color="#000" Pinting_Name="Tefess">
+                    </a-plane> -->
                 </a-plane>
+                <!-- ############################################################### -->
                 <!-- <a-plane scale="100 100 0" opacity="1" class="pintings_info Tefess" rotation="0 0 0"
                     position="109 100 -400" class="Tefess" color="#000" the_pintings_infos="Tefess">
                 </a-plane> -->
+                <!-- ############################################################### -->
             </a-entity>
+
         </a-entity>
         <!-- ############################################################ -->
         <a-entity scale="0 0 0 " class="big-pintings-containers" id="big-pintings-containers-2" position="50 15 -60"
             visible="false">
-
             <!-- Row-0 -->
             <a-entity position="0 0 0" rotation="0 190 0" class="pintings-containers" id="pinting-container-0">
 
-                <a-plane data-clickable scale="260 160 0" class="pintings clickable" rotation="0 -30 0"
+                <a-plane data-clickable scale="295 130 0" class="pintings clickable" rotation="0 -30 0"
                     position="-0 124 -400" color="#000" the_pintings="Pinting_Name : GUISS GUISS ;
                          Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                           Autor_Name :Amicale des étudiants des MSAD ;
@@ -534,7 +543,7 @@
                            Price : 4.212 000 francs (6480 € )">
                 </a-plane>
 
-                <a-plane data-clickable scale="125 300 0" class="pintings clickable" rotation="0 0 0"
+                <a-plane data-clickable scale="202.40112 300 0.00001" class="pintings clickable" rotation="0 0 0"
                     position="-0 20 -400" color="#000" the_pintings="Pinting_Name :Tangouna Mbaar;
                     Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                         Autor_Name :Ousmane Sy;
@@ -958,6 +967,7 @@
 
                 this.el.setAttribute('color', '#fff')
                 this.el.setAttribute('opacity', '0.6')
+                // this.el.setAttribute('opacity', '1')
                 this.el.setAttribute('event-set__mouseenter', "scale: 1.2 1.2 1")
                 this.el.setAttribute('event-set__mouseleave', "scale: 0.9 0.9 0.9")
 
@@ -1039,7 +1049,7 @@
                 this.el.setAttribute('color', '#fff')
                 this.el.setAttribute("opacity", "0");
                 this.el.setAttribute("material", "src: #Dote-1; transparent: true");
-                // console.log(this.data);
+                //*#######################################
                 var The_Name = this.data.Pinting_Name;
                 var The_Author = this.data.Autor_Name;
                 var The_Price = this.data.Price;
@@ -1061,29 +1071,34 @@
                         the_art_picture.setAttribute("width", `90%`)
                     }
                 });
+                //#######################################################
 
-                // this.el.setAttribute('event-set__mouseenter', "opacity: 1")
-                // this.el.setAttribute('event-set__mouseleave', "opacity: 0")
+                this.el.setAttribute('event-set__mouseenter', "opacity: 1")
+                this.el.setAttribute('event-set__mouseleave', "opacity: 0")
 
-                // this.el.addEventListener('mouseover', function () {
-                //     the_cursor.cursor = 'pointer !important'
-                //     console.log('mouseover');
+                this.el.addEventListener('mouseover', function () {
+                    // the_cursor.cursor = 'pointer !important'
+                    console.log('mouseover');
 
-                // })
-                // this.el.addEventListener('mouseout', function () {
-                //     the_cursor.style.cursor = 'default !important'
-                //     console.log('mouseout');
-                // })
+                })
+                this.el.addEventListener('mouseout', function () {
+                    // the_cursor.style.cursor = 'default !important'
+                    console.log('mouseout');
+                })
+
+                //#######################################################
             }
         });
-        // AFRAME.registerComponent('the_pintings_infos', {
-        //     schema: {
-        //         Pinting_Name: { type: "string", default: "" },
-        //     },
-        //     init: function () {
-        //         this.el.setAttribute("opacity", "0");
-        //     }
-        // });
+        //#######################################################
+        AFRAME.registerComponent('the_pintings_infos', {
+            schema: {
+                Pinting_Name: { type: "string", default: "" },
+            },
+            init: function () {
+                this.el.setAttribute("opacity", "0");
+            }
+        });
+        //#######################################################
     </script>
 </body>
 
