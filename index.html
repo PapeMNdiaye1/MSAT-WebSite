@@ -307,7 +307,8 @@
 
     <a-scene id="the_scene" the_scene cursor="rayOrigin: mouse">
         <a-assets>
-            <img id="Tableaux-1" src="./Style/Images/PNG/Info-1(JOMBAJO).png">
+            <img id="Tableaux-1" src="./Style/Images/Tableaux-Infos/Info-1(JOMBAJO).png">
+            <img id="Tableaux-2" src="./Style/Images/Tableaux-Infos/Info-2(GUISS-GUISS).png ">
 
             <img id="Scene-1" src="./Style/Images/Scene-1.jpg">
             <img id="Scene-2" src="./Style/Images/Scene-2.jpg">
@@ -327,12 +328,26 @@
             raycaster="objects: [data-clickable] ; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
 
         <!--! ##################################################### -->
-        <a-plane data-clickable id="the-plane" material="src: #Tableaux-1; transparent: true" scale="1 1 1"
+        <!-- <a-plane data-clickable id="the-plane" material="src: #Tableaux-1; transparent: true" scale="1 1 1"
             position="0.5 1 -2.4" color="#CCC" height="2" width="2" the_plane>
             <a-plane data-clickable material="src: #Dote-3; transparent: true" scale=" 0.1 0.1 0.1" position=".3 1 1"
                 color="#000" height="2" width="2" close_the_plane>
             </a-plane>
+        </a-plane> -->
+        <a-plane data-clickable id="the-plane" material="src: #Tableaux-1; transparent: true" scale="1 1 1"
+            position="-1.24339 1 -2.0498" rotation="0 54 0" color="#CCC" height="2" width="2" the_plane>
+            <a-plane data-clickable material="src: #Dote-3; transparent: true" scale=" 0.1 0.1 0.1" position="1 1.2 0"
+                color="#000" height="2" width="2" close_the_plane>
+            </a-plane>
         </a-plane>
+
+        <!-- <a-plane data-clickable="" id="the-plane" material="src: [object HTMLImageElement]; transparent: true" scale=""
+            position="-1.24339 1 -2.0498" color="#CCC" height="2" width="2" the_plane="" geometry="">
+            <a-plane data-clickable="" material="src: [object HTMLImageElement]; transparent: true" scale="0.1 0.1 0.1"
+                position="0.3 1 1" color="#000" height="2" width="2" close_the_plane="" geometry=""
+                event-set__mouseenter="[object Object]" event-set__mouseleave="[object Object]">
+            </a-plane>
+        </a-plane> -->
         <!--! ##################################################### -->
 
         <a-sky id="image-360" radius="500" src="#Scene-1"
@@ -1061,9 +1076,9 @@
         the_close_crad.addEventListener('click', function () {
             the_crad_container.style.display = 'none'
         });
-        the_crad_container.addEventListener('click', function () {
-            the_crad_container.style.display = 'none'
-        });
+        // the_crad_container.addEventListener('click', function () {
+        //     the_crad_container.style.display = 'none'
+        // });
 
         AFRAME.registerComponent('the_pintings', {
             schema: {
@@ -1095,7 +1110,27 @@
                     the_art_picture.setAttribute("src", `${The_Picture}`)
                     ThePlane.setAttribute("scale", "1 1 1");
 
-                    // console.log(the_art_picture.height);
+
+                    switch (The_Name) {
+                        case 'GUISS GUISS':
+                            console.log(The_Name);
+                            ThePlane.setAttribute("material", "src: #Tableaux-2; transparent: true");
+                            break;
+                        case 'Femme Peulh':
+                            console.log(The_Name);
+                            ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                            break;
+                        case 'Tangouna Mbaar':
+                            console.log(The_Name);
+                            ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                            break;
+                        default:
+                            break;
+                    }
+
+
+
+
                     if (The_Name == 'Tangouna Mbaar') {
                         the_art_picture.setAttribute("width", `70%`)
                     } else {
@@ -1103,7 +1138,7 @@
                     }
                     //#######################################################
 
-                    ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                    // ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
                     //#######################################################
 
 
