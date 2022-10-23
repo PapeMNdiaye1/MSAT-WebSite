@@ -974,13 +974,14 @@
     <script>
 
 
-        // let inVR = false;
-        // AFRAME.registerComponent('the_scene', {
-        //     tick: function () {
-        //         var sceneEl = this.el;
-        //         inVR = sceneEl.is('vr-mode');
-        //     },
-        // });
+        let inVR = false;
+
+        AFRAME.registerComponent('the_scene', {
+            tick: function () {
+                var sceneEl = this.el;
+                inVR = sceneEl.is('vr-mode');
+            },
+        });
 
 
 
