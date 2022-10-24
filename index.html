@@ -309,6 +309,14 @@
         <a-assets>
             <img id="Tableaux-1" src="./Style/Images/Tableaux-Infos/Info-1(JOMBAJO).png">
             <img id="Tableaux-2" src="./Style/Images/Tableaux-Infos/Info-2(GUISS-GUISS).png ">
+            <img id="Tableaux-3" src="./Style/Images/Tableaux-Infos/Info-3(NABOULE).png ">
+            <img id="Tableaux-4" src="./Style/Images/Tableaux-Infos/Info-4(Tangouna-Mbar).png">
+            <img id="Tableaux-5" src="./Style/Images/Tableaux-Infos/Info-5(Maitre-Du-Dois-Saccre).png">
+            <img id="Tableaux-6" src="./Style/Images/Tableaux-Infos/Info-6(Le-Champ-Des-Tiraileur).png">
+            <img id="Tableaux-7" src="./Style/Images/Tableaux-Infos/Info-7(Tevess).png">
+            <img id="Tableaux-8" src="./Style/Images/Tableaux-Infos/Info-8(Femme-Peulh).png">
+            <img id="Tableaux-9" src="./Style/Images/Tableaux-Infos/Info-9(Diala-Ndama).png">
+            <img id="Tableaux-10" src="./Style/Images/Tableaux-Infos/Info-10(Cinquantenaire).png">
 
             <img id="Scene-1" src="./Style/Images/Scene-1.jpg">
             <img id="Scene-2" src="./Style/Images/Scene-2.jpg">
@@ -328,28 +336,14 @@
             raycaster="objects: [data-clickable] ; far: 500; lineColor: #23343b; lineOpacity: 0.5"></a-entity>
 
         <!--! ##################################################### -->
-        <!-- <a-plane data-clickable id="the-plane" material="src: #Tableaux-1; transparent: true" scale="1 1 1"
-            position="0.5 1 -2.4" color="#CCC" height="2" width="2" the_plane>
-            <a-plane data-clickable material="src: #Dote-3; transparent: true" scale=" 0.1 0.1 0.1" position=".3 1 1"
-                color="#000" height="2" width="2" close_the_plane>
-            </a-plane>
-        </a-plane> -->
         <a-entity id="the-plane-rotater" rotation="0 0 0">
-            <a-plane data-clickable id="the-plane" material="src: #Tableaux-1; transparent: true" scale="1 1 1"
-                position="-0 1 -2" rotation="0 0 0" color="#CCC" height="2" width="2" the_plane>
+            <a-plane data-clickable id="the-plane" material="src: #Tableaux-1; transparent: true" scale="0 0 0"
+                position="-0 1 -2" rotation="0 0 0" color="#CCC" height="2.3" width="2" the_plane>
                 <a-plane data-clickable material="src: #Dote-3; transparent: true" scale=" 0.1 0.1 0.1"
-                    position="1 1.2 0" color="#000" height="2" width="2" close_the_plane>
+                    position="1 1.2 0" color="#f1f1f1" height="2" width="2" close_the_plane>
                 </a-plane>
             </a-plane>
         </a-entity>
-
-        <!-- <a-plane data-clickable="" id="the-plane" material="src: [object HTMLImageElement]; transparent: true" scale=""
-            position="-1.24339 1 -2.0498" color="#CCC" height="2" width="2" the_plane="" geometry="">
-            <a-plane data-clickable="" material="src: [object HTMLImageElement]; transparent: true" scale="0.1 0.1 0.1"
-                position="0.3 1 1" color="#000" height="2" width="2" close_the_plane="" geometry=""
-                event-set__mouseenter="[object Object]" event-set__mouseleave="[object Object]">
-            </a-plane>
-        </a-plane> -->
         <!--! ##################################################### -->
 
         <a-sky id="image-360" radius="500" src="#Scene-1"
@@ -666,7 +660,8 @@
                                 Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                                 Autor_Name :Amicale des étudiants des MSAD ;
                                 Size :2.92/4.48;
-                                Price : 17.004 000 francs (26160 € )">
+                                Price : 17.004 000 francs (26160 € )
+                                ; PlaneRotation : 180">
                 </a-plane>
 
             </a-entity>
@@ -679,7 +674,8 @@
                                 Pinting_Picture: ./Style/Images/Tableaux/femme-peulh.jpg ;
                                 Autor_Name :Mamadou Wade;
                                 Size :2/1.62;
-                                Price : 4.212 000 francs (6480 € )">
+                                Price : 4.212 000 francs (6480 € )
+                                ; PlaneRotation : 160">
                 </a-plane>
 
                 <a-plane data-clickable scale="70 135 0" class="pintings clickable" rotation="0 -25 0"
@@ -687,7 +683,8 @@
                             Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                                 Autor_Name :Ousmane Sy;
                                 Size :3.04/1.50;
-                                Price : 5.928 000 francs (9120 €)">
+                                Price : 5.928 000 francs (9120 €)
+                                ; PlaneRotation : 160">
                 </a-plane>
 
             </a-entity>
@@ -699,7 +696,8 @@
                             Pinting_Picture: ./Style/Images/Tableaux/maitre-du-bois-saccre.jpg;
                             Autor_Name :ANSOUMANA DIEDHIOU;
                             Size : 1.9/2.97; 
-                            Price : 6.799 000 francs (10460 € ) ">
+                            Price : 6.799 000 francs (10460 € )
+                            ; PlaneRotation : 140 ">
                 </a-plane>
 
                 <a-plane data-clickable scale="120 160 0" class="pintings clickable" rotation="0 -33 0"
@@ -707,7 +705,8 @@
                                 Pinting_Picture: ./Style/Images/Tableaux/Jombojo.jpg;
                                 Autor_Name :KALIDOU KASSE;
                                 Size :3.23/2.28;
-                                Price : 9.568 000 francs (14720 €)">
+                                Price : 9.568 000 francs (14720 €)
+                                ; PlaneRotation : 140">
                 </a-plane>
             </a-entity>
 
@@ -718,7 +717,8 @@
                                 Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
                                 Autor_Name :ALASSANE.M.DIOP;
                                 Size : 2.33/1.60;
-                                Price : 5.109 000 francs (7860 €)">
+                                Price : 5.109 000 francs (7860 €)
+                                ; PlaneRotation : 100">
                 </a-plane>
 
                 <a-plane data-clickable scale="250 140 0" class="pintings clickable" rotation="30 -25 -0"
@@ -726,7 +726,8 @@
                                 Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
                                 Autor_Name :MSAD;
                                 Size : 2.43/3.37;
-                                Price : 10.660 000 francs (16400 €)">
+                                Price : 10.660 000 francs (16400 €)
+                                ; PlaneRotation : 100">
                 </a-plane>
             </a-entity>
 
@@ -737,7 +738,8 @@
                                 Pinting_Picture: ./Style/Images/Tableaux/NABOULE.jpg;
                                 Autor_Name :Sény Gadiaga;
                                 Size : 2.36/3.34;
-                                Price : 10.257 000 francs (15780 €)">
+                                Price : 10.257 000 francs (15780 €)
+                                ; PlaneRotation : 40">
                 </a-plane>
 
                 <a-plane data-clickable scale="230 180 0" class="pintings clickable" rotation="0 6 0"
@@ -745,7 +747,8 @@
                                 Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                                 Autor_Name :Sény Gadiaga;
                                 Size : 2.36/3.34;
-                                Price : 10.257 000 francs (15780 € )">
+                                Price : 10.257 000 francs (15780 € )
+                                ; PlaneRotation : 40">
                 </a-plane>
             </a-entity>
 
@@ -757,7 +760,8 @@
                                 Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
                                 Autor_Name :Mamadou Gaye;
                                 Size : 2.04/1.84;
-                                Price : 4.875 000 francs (7500 €)">
+                                Price : 4.875 000 francs (7500 €)
+                                ; PlaneRotation : -20">
                 </a-plane>
 
             </a-entity>
@@ -773,7 +777,8 @@
                                                     Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                                                     Autor_Name :Amicale des étudiants des MSAD ;
                                                     Size :2.92/4.48;
-                                                    Price : 17.004 000 francs (26160 € )">
+                                                    Price : 17.004 000 francs (26160 € )
+                                                    ; PlaneRotation : 140">
                 </a-plane>
 
             </a-entity>
@@ -786,7 +791,8 @@
                                                     Pinting_Picture: ./Style/Images/Tableaux/femme-peulh.jpg ;
                                                     Autor_Name :Mamadou Wade;
                                                     Size :2/1.62;
-                                                    Price : 4.212 000 francs (6480 € )">
+                                                    Price : 4.212 000 francs (6480 € )
+                                                      ; PlaneRotation : 125">
                 </a-plane>
 
                 <a-plane data-clickable scale="45 90 0" class="pintings clickable" rotation="0 5 0"
@@ -794,7 +800,8 @@
                                                 Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                                                 Autor_Name :Ousmane Sy;
                                                 Size :3.04/1.50;
-                                                Price : 5.928 000 francs (9120 €)">
+                                                Price : 5.928 000 francs (9120 €)
+                                                  ; PlaneRotation : 125">
                 </a-plane>
 
             </a-entity>
@@ -806,7 +813,8 @@
                                                 Pinting_Picture: ./Style/Images/Tableaux/maitre-du-bois-saccre.jpg;
                                                 Autor_Name :ANSOUMANA DIEDHIOU;
                                                 Size : 1.9/2.97; 
-                                                                    Price : 6.799 000 francs (10460 € ) ">
+                                                Price : 6.799 000 francs (10460 € )
+                                                  ; PlaneRotation : 120 ">
                 </a-plane>
 
                 <a-plane data-clickable scale="60 80 0" class="pintings clickable" rotation="0 0 0"
@@ -814,7 +822,8 @@
                                                     Pinting_Picture: ./Style/Images/Tableaux/Jombojo.jpg;
                                                     Autor_Name :KALIDOU KASSE;
                                                     Size :3.23/2.28;
-                                                    Price : 9.568 000 francs (14720 €)">
+                                                    Price : 9.568 000 francs (14720 €)
+                                                      ; PlaneRotation : 120">
                 </a-plane>
             </a-entity>
 
@@ -825,7 +834,8 @@
                                                     Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
                                                     Autor_Name :ALASSANE.M.DIOP;
                                                     Size : 2.33/1.60;
-                                                    Price : 5.109 000 francs (7860 €)">
+                                                    Price : 5.109 000 francs (7860 €)
+                                                      ; PlaneRotation : 95">
                 </a-plane>
 
                 <a-plane data-clickable scale="75 53 0" class="pintings clickable" rotation="0 -7 -0"
@@ -833,7 +843,8 @@
                                                     Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
                                                     Autor_Name :MSAD;
                                                     Size : 2.43/3.37;
-                                                    Price : 10.660 000 francs (16400 €)">
+                                                    Price : 10.660 000 francs (16400 €)
+                                                      ; PlaneRotation : 95">
                 </a-plane>
             </a-entity>
 
@@ -844,7 +855,8 @@
                                                     Pinting_Picture: ./Style/Images/Tableaux/NABOULE.jpg;
                                                     Autor_Name :Sény Gadiaga;
                                                     Size : 2.36/3.34;
-                                                    Price : 10.257 000 francs (15780 €)">
+                                                    Price : 10.257 000 francs (15780 €)
+                                                      ; PlaneRotation : 75">
                 </a-plane>
 
                 <a-plane data-clickable scale="70 50 0" class="pintings clickable" rotation="0 -22 0"
@@ -852,7 +864,8 @@
                                                     Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                                                     Autor_Name :Sény Gadiaga;
                                                     Size : 2.36/3.34;
-                                                    Price : 10.257 000 francs (15780 € )">
+                                                    Price : 10.257 000 francs (15780 € )
+                                                      ; PlaneRotation : 75">
                 </a-plane>
             </a-entity>
 
@@ -864,7 +877,8 @@
                                                     Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
                                                     Autor_Name :Mamadou Gaye;
                                                     Size : 2.04/1.84;
-                                                    Price : 4.875 000 francs (7500 €)">
+                                                    Price : 4.875 000 francs (7500 €)
+                                                      ; PlaneRotation : 50">
                 </a-plane>
 
             </a-entity>
@@ -879,7 +893,8 @@
                                          Pinting_Picture:./Style/Images/Tableaux/guis-guis.jpg;
                                           Autor_Name :Amicale des étudiants des MSAD ;
                                            Size :2.92/4.48;
-                                            Price : 17.004 000 francs (26160 € )">
+                                            Price : 17.004 000 francs (26160 € )
+                                              ; PlaneRotation : 130">
                 </a-plane>
 
             </a-entity>
@@ -891,7 +906,8 @@
                                          Pinting_Picture: ./Style/Images/Tableaux/femme-peulh.jpg ;
                                           Autor_Name :Mamadou Wade;
                                            Size :2/1.62;
-                                           Price : 4.212 000 francs (6480 € )">
+                                           Price : 4.212 000 francs (6480 € )
+                                             ; PlaneRotation : 105">
                 </a-plane>
 
                 <a-plane data-clickable scale="60 90 0" class="pintings clickable" rotation="0 5 0"
@@ -899,7 +915,8 @@
                                     Pinting_Picture: ./Style/Images/Tableaux/Tangouna-mbar.jpg ;
                                         Autor_Name :Ousmane Sy;
                                         Size :3.04/1.50;
-                                        Price : 5.928 000 francs (9120 €)">
+                                        Price : 5.928 000 francs (9120 €)
+                                          ; PlaneRotation : 105">
                 </a-plane>
 
             </a-entity>
@@ -910,7 +927,8 @@
                                     Pinting_Picture: ./Style/Images/Tableaux/maitre-du-bois-saccre.jpg;
                                     Autor_Name :ANSOUMANA DIEDHIOU;
                                     Size : 1.9/2.97; 
-                                                        Price : 6.799 000 francs (10460 € ) ">
+                                    Price : 6.799 000 francs (10460 € )
+                                      ; PlaneRotation : 85 ">
                 </a-plane>
 
                 <a-plane data-clickable scale="60 80 0" class="pintings clickable" rotation="0 20 0"
@@ -918,7 +936,8 @@
                                         Pinting_Picture: ./Style/Images/Tableaux/Jombojo.jpg;
                                         Autor_Name :KALIDOU KASSE;
                                         Size :3.23/2.28;
-                                        Price : 9.568 000 francs (14720 €)">
+                                        Price : 9.568 000 francs (14720 €)
+                                          ; PlaneRotation : 85">
                 </a-plane>
             </a-entity>
             <!-- Row-3 -->
@@ -928,7 +947,8 @@
                                         Pinting_Picture: ./Style/Images/Tableaux/diala-ndama.jpg;
                                         Autor_Name :ALASSANE.M.DIOP;
                                         Size : 2.33/1.60;
-                                        Price : 5.109 000 francs (7860 €)">
+                                        Price : 5.109 000 francs (7860 €)
+                                          ; PlaneRotation : 70">
                 </a-plane>
 
                 <a-plane data-clickable scale="70 50 0" class="pintings clickable" rotation="0 -0 -0"
@@ -936,7 +956,8 @@
                                         Pinting_Picture: ./Style/Images/Tableaux/cinquantenaire.jpg;
                                         Autor_Name :MSAD;
                                         Size : 2.43/3.37;
-                                        Price : 10.660 000 francs (16400 €)">
+                                        Price : 10.660 000 francs (16400 €)
+                                          ; PlaneRotation : 70">
                 </a-plane>
             </a-entity>
             <!-- Row-4 -->
@@ -946,7 +967,8 @@
                                         Pinting_Picture: ./Style/Images/Tableaux/NABOULE.jpg;
                                         Autor_Name :Sény Gadiaga;
                                         Size : 2.36/3.34;
-                                        Price : 10.257 000 francs (15780 €)">
+                                        Price : 10.257 000 francs (15780 €)
+                                          ; PlaneRotation : 50">
                 </a-plane>
 
                 <a-plane data-clickable scale="70 50 0" class="pintings clickable" rotation="0 6 0"
@@ -954,7 +976,8 @@
                                         Pinting_Picture: ./Style/Images/Tableaux/le-champ-des-tiraileur.jpg;
                                         Autor_Name :Sény Gadiaga;
                                         Size : 2.36/3.34;
-                                        Price : 10.257 000 francs (15780 € )">
+                                        Price : 10.257 000 francs (15780 € )
+                                          ; PlaneRotation : 50">
                 </a-plane>
             </a-entity>
             <!-- Row-5 -->
@@ -965,7 +988,8 @@
                 Pinting_Picture: ./Style/Images/Tableaux/tevess.jpg;
                 Autor_Name :Mamadou Gaye;
                 Size : 2.04/1.84;
-                Price : 4.875 000 francs (7500 €)">
+                Price : 4.875 000 francs (7500 €)
+                 ; PlaneRotation : 35">
                 </a-plane>
 
             </a-entity>
@@ -1122,31 +1146,31 @@
                             ThePlane.setAttribute("material", "src: #Tableaux-2; transparent: true");
                             break;
                         case 'Femme Peulh':
-                            ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                            ThePlane.setAttribute("material", "src: #Tableaux-8; transparent: true");
                             break;
                         case 'Tangouna Mbaar':
-                            ThePlane.setAttribute("material", "src: #Tableaux-2; transparent: true");
+                            ThePlane.setAttribute("material", "src: #Tableaux-4; transparent: true");
                             break;
-                        case 'Tangouna Le Maitre Du Bois Sacré':
-                            ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                        case 'Le Maitre Du Bois Sacré':
+                            ThePlane.setAttribute("material", "src: #Tableaux-5; transparent: true");
                             break;
                         case 'JOMBAJO':
                             ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
                             break;
                         case 'Diala Ndama':
-                            ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                            ThePlane.setAttribute("material", "src: #Tableaux-9; transparent: true");
                             break;
                         case 'Cinquantenaire':
-                            ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                            ThePlane.setAttribute("material", "src: #Tableaux-10; transparent: true");
                             break;
                         case 'NABOULE':
-                            ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                            ThePlane.setAttribute("material", "src: #Tableaux-3; transparent: true");
                             break;
                         case 'Le Chant des Tirailleurs Sénégalais':
-                            ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                            ThePlane.setAttribute("material", "src: #Tableaux-6; transparent: true");
                             break;
                         case 'Tefess':
-                            ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                            ThePlane.setAttribute("material", "src: #Tableaux-7; transparent: true");
                             break;
                         default:
                             break;
