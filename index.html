@@ -17,9 +17,6 @@
     <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
     <!-- ########################################################################################### -->
-    <!-- <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script> -->
-    <!-- <script src="https://unpkg.com/aframe-html-shader@0.5.0/dist/aframe-html-shader.min.js"></script>
-    <script src="https://unpkg.com/aframe-html-shader@1.3.0/dist/aframe-html-shader.min.js"></script> -->
 </head>
 
 <body>
@@ -43,14 +40,6 @@
         #the_scene {
             cursor: default;
         }
-
-        /* .a-canvas {
-            cursor: default !important;
-        } */
-
-        /* .a-grab-cursor {
-            cursor: default !important;
-        } */
 
         .a-mouse-cursor-hover {
             cursor: default !important;
@@ -307,6 +296,21 @@
 
     <a-scene id="the_scene" the_scene cursor="rayOrigin: mouse">
         <a-assets>
+
+            <img id="Scene-1" src="./Style/Images/Scene-1.jpg">
+            <img id="Scene-2" src="./Style/Images/Scene-2.jpg">
+            <img id="Scene-3" src="./Style/Images/Scene-3.jpg">
+
+            <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
+
+            <img id="Scene-4" src="./Style/Images/Scene-5.jpg">
+            <img id="Scene-5" src="./Style/Images/Scene-4.jpg">
+
+            <img id="Loader" src="./Style/Images/PNG/Loader.png">
+            <img id="Dote-1" src="./Style/Images/PNG/Dote_1.png">
+            <img id="Dote-2" src="./Style/Images/PNG/Dote_2.png">
+            <img id="Dote-3" src="./Style/Images/PNG/Dote_3.png">
+
             <img id="Tableaux-1" src="./Style/Images/Tableaux-Infos/Info-1(JOMBAJO).png">
             <img id="Tableaux-2" src="./Style/Images/Tableaux-Infos/Info-2(GUISS-GUISS).png ">
             <img id="Tableaux-3" src="./Style/Images/Tableaux-Infos/Info-3(NABOULE).png ">
@@ -318,15 +322,6 @@
             <img id="Tableaux-9" src="./Style/Images/Tableaux-Infos/Info-9(Diala-Ndama).png">
             <img id="Tableaux-10" src="./Style/Images/Tableaux-Infos/Info-10(Cinquantenaire).png">
 
-            <img id="Scene-1" src="./Style/Images/Scene-1.jpg">
-            <img id="Scene-2" src="./Style/Images/Scene-2.jpg">
-            <img id="Scene-3" src="./Style/Images/Scene-3.jpg">
-            <img id="Scene-4" src="./Style/Images/Scene-5.jpg">
-            <img id="Scene-5" src="./Style/Images/Scene-4.jpg">
-            <img id="Arrow-1" src="./Style/Images/PNG/Arrow-1.png">
-            <img id="Dote-1" src="./Style/Images/PNG/Dote_1.png">
-            <img id="Dote-2" src="./Style/Images/PNG/Dote_2.png">
-            <img id="Dote-3" src="./Style/Images/PNG/Dote_3.png">
             <source id="the_sound" src="./Style/MediTation_From_West_Africa.mp3" type="audio/mpeg">
         </a-assets>
 
@@ -337,18 +332,25 @@
 
         <!--! ##################################################### -->
         <a-entity id="the-plane-rotater" rotation="0 0 0">
-            <a-plane data-clickable id="the-plane" material="src: #Tableaux-1; transparent: true" scale="0 0 0"
+            <a-plane data-clickable id="the-plane" material="src:#Loader; transparent: true" scale="0 0 0"
                 position="-0 1 -2" rotation="0 0 0" color="#CCC" height="2.3" width="2" the_plane>
-                <a-plane data-clickable material="src: #Dote-3; transparent: true" scale=" 0.1 0.1 0.1"
+
+                <a-plane data-clickable material="src: #Dote-3; transparent: true" scale=" 0.08 0.08 0.08"
                     position="1 1.2 0" color="#f1f1f1" height="2" width="2" close_the_plane>
                 </a-plane>
+
+                <a-plane data-clickable material="src:#Loader ; transparent: true" scale=" 1 1 1" position="0 0 -.1"
+                    height="2" width="2">
+                </a-plane>
+
             </a-plane>
         </a-entity>
         <!--! ##################################################### -->
 
-        <a-sky id="image-360" radius="500" src="#Scene-1"
+        <a-sky data-clickable id="image-360" radius="500" src="#Scene-1"
             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
-            animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
+            animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"
+            the_sky>
         </a-sky>
         <!-- ############################################################ -->
         <a-sound position="0 0 0" sound="src: #the_sound; autoplay: true; loop: true" allow="autoplay"></a-sound>
@@ -998,32 +1000,31 @@
     <script>
 
 
-        let inVR = false;
+        let groups = document.querySelectorAll('.groups')
+        let the_Plane_Rotater = document.querySelector('#the-plane-rotater')
+        let the_sky = document.querySelector('#image-360')
+        let big_pintings_containers = document.querySelectorAll('.big-pintings-containers')
+        let pintings_info = document.querySelectorAll('.pintings_info')
+        let the_cursor = document.querySelector('.a-mouse-cursor-hover')
+        let ThePlane = document.querySelector('#the-plane')
 
+        //! #######################################################
+
+        let inVR = false;
         AFRAME.registerComponent('the_scene', {
             tick: function () {
                 var sceneEl = this.el;
                 inVR = sceneEl.is('vr-mode');
+                if (inVR == false) {
+                    ThePlane.setAttribute("scale", "0 0 0");
+                }
+                return inVR
             },
         });
 
 
 
-        let groups = document.querySelectorAll('.groups')
-        let the_Plane_Rotater = document.querySelector('#the-plane-rotater')
-        // let ThePlane = document.querySelectorAll('#the-plane')
-        let the_sky = document.querySelector('#image-360')
-        let big_pintings_containers = document.querySelectorAll('.big-pintings-containers')
-        let pintings_info = document.querySelectorAll('.pintings_info')
-        let the_cursor = document.querySelector('.a-mouse-cursor-hover')
 
-        //! #######################################################
-        let ThePlane = document.querySelector('#the-plane')
-
-
-        //! #######################################################
-        // console.log(big_pintings_containers);
-        // console.log(groups);
 
         AFRAME.registerComponent('the_dote', {
             schema: { Name_of_dote: { type: 'string', default: '#Name', }, Group_to_activate: { type: 'string', default: '#Position', } },
@@ -1036,9 +1037,9 @@
 
                 this.el.setAttribute('color', '#fff')
                 this.el.setAttribute('opacity', '0.6')
-                // this.el.setAttribute('opacity', '1')
                 this.el.setAttribute('event-set__mouseenter', "scale: 1.2 1.2 1")
                 this.el.setAttribute('event-set__mouseleave', "scale: 0.9 0.9 0.9")
+                this.el.style.cursor = 'pointer'
 
 
 
@@ -1090,7 +1091,6 @@
 
         //###############################################################
         //###############################################################
-        //Run Ones
         let the_crad_container = document.querySelector('#the_crad_container')
         let the_close_crad = document.querySelector('#close_crad')
         let the_art_title = document.querySelector('#art_title')
@@ -1098,14 +1098,11 @@
         let the_art_price = document.querySelector('#the_art_price')
         let the_art_size = document.querySelector('#the_art_size')
         let the_art_picture = document.querySelector('#the_art_picture').childNodes[1]
-        // console.log(the_art_picture);
+
         the_close_crad.addEventListener('click', function () {
             the_crad_container.style.display = 'none'
         });
 
-        // the_crad_container.addEventListener('click', function () {
-        //     the_crad_container.style.display = 'none'
-        // });
 
         AFRAME.registerComponent('the_pintings', {
             schema: {
@@ -1120,6 +1117,8 @@
                 this.el.setAttribute('color', '#fff')
                 this.el.setAttribute("opacity", "0");
                 this.el.setAttribute("material", "src: #Dote-1; transparent: true");
+                // this.el.canvas.style.cursor = 'pointer'
+                this.el.style.cursor = 'pointer'
                 //*#######################################
                 var The_Name = this.data.Pinting_Name;
                 var The_Author = this.data.Autor_Name;
@@ -1135,58 +1134,61 @@
                     the_art_author.innerHTML = `${The_Author}`
                     the_art_price.innerHTML = The_Price
                     the_art_size.innerHTML = `${The_Size}`
-                    the_crad_container.style.display = 'flex'
-                    the_art_picture.setAttribute("src", `${The_Picture}`)
-                    ThePlane.setAttribute("scale", "1 1 1");
-                    the_Plane_Rotater.setAttribute("rotation", `0 ${The_ZRotation} 0`)
-                    console.log(The_ZRotation);
 
-                    switch (The_Name) {
-                        case 'GUISS GUISS':
-                            ThePlane.setAttribute("material", "src: #Tableaux-2; transparent: true");
-                            break;
-                        case 'Femme Peulh':
-                            ThePlane.setAttribute("material", "src: #Tableaux-8; transparent: true");
-                            break;
-                        case 'Tangouna Mbaar':
-                            ThePlane.setAttribute("material", "src: #Tableaux-4; transparent: true");
-                            break;
-                        case 'Le Maitre Du Bois Sacré':
-                            ThePlane.setAttribute("material", "src: #Tableaux-5; transparent: true");
-                            break;
-                        case 'JOMBAJO':
-                            ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
-                            break;
-                        case 'Diala Ndama':
-                            ThePlane.setAttribute("material", "src: #Tableaux-9; transparent: true");
-                            break;
-                        case 'Cinquantenaire':
-                            ThePlane.setAttribute("material", "src: #Tableaux-10; transparent: true");
-                            break;
-                        case 'NABOULE':
-                            ThePlane.setAttribute("material", "src: #Tableaux-3; transparent: true");
-                            break;
-                        case 'Le Chant des Tirailleurs Sénégalais':
-                            ThePlane.setAttribute("material", "src: #Tableaux-6; transparent: true");
-                            break;
-                        case 'Tefess':
-                            ThePlane.setAttribute("material", "src: #Tableaux-7; transparent: true");
-                            break;
-                        default:
-                            break;
-                    }
+                    //########################################################################
+                    //########################################################################
+                    if (inVR == false) {
+                        the_art_picture.setAttribute("src", `${The_Picture}`)
+                        the_crad_container.style.display = 'flex'
 
-                    if (The_Name == 'Tangouna Mbaar') {
-                        the_art_picture.setAttribute("width", `70%`)
+                        if (The_Name == 'Tangouna Mbaar') {
+                            the_art_picture.setAttribute("width", `70%`)
+                        } else {
+                            the_art_picture.setAttribute("width", `90%`)
+                        }
                     } else {
-                        the_art_picture.setAttribute("width", `90%`)
+                        //########################################################################
+                        //########################################################################
+                        ThePlane.setAttribute("scale", "1 1 1");
+                        the_Plane_Rotater.setAttribute("rotation", `0 ${The_ZRotation} 0`)
+
+                        switch (The_Name) {
+                            case 'GUISS GUISS':
+                                ThePlane.setAttribute("material", "src: #Tableaux-2; transparent: true");
+                                break;
+                            case 'Femme Peulh':
+                                ThePlane.setAttribute("material", "src: #Tableaux-8; transparent: true");
+                                break;
+                            case 'Tangouna Mbaar':
+                                ThePlane.setAttribute("material", "src: #Tableaux-4; transparent: true");
+                                break;
+                            case 'Le Maitre Du Bois Sacré':
+                                ThePlane.setAttribute("material", "src: #Tableaux-5; transparent: true");
+                                break;
+                            case 'JOMBAJO':
+                                ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
+                                break;
+                            case 'Diala Ndama':
+                                ThePlane.setAttribute("material", "src: #Tableaux-9; transparent: true");
+                                break;
+                            case 'Cinquantenaire':
+                                ThePlane.setAttribute("material", "src: #Tableaux-10; transparent: true");
+                                break;
+                            case 'NABOULE':
+                                ThePlane.setAttribute("material", "src: #Tableaux-3; transparent: true");
+                                break;
+                            case 'Le Chant des Tirailleurs Sénégalais':
+                                ThePlane.setAttribute("material", "src: #Tableaux-6; transparent: true");
+                                break;
+                            case 'Tefess':
+                                ThePlane.setAttribute("material", "src: #Tableaux-7; transparent: true");
+                                break;
+                            default:
+                                break;
+                        }
+                        //########################################################################
+                        //########################################################################
                     }
-                    //#######################################################
-
-                    // ThePlane.setAttribute("material", "src: #Tableaux-1; transparent: true");
-                    //#######################################################
-
-
 
                 });
                 //#######################################################
@@ -1195,12 +1197,10 @@
                 this.el.setAttribute('event-set__mouseleave', "opacity: 0")
 
                 this.el.addEventListener('mouseover', function () {
-                    // the_cursor.cursor = 'pointer !important'
                     console.log('mouseover');
 
                 })
                 this.el.addEventListener('mouseout', function () {
-                    // the_cursor.style.cursor = 'default !important'
                     console.log('mouseout');
                 })
 
@@ -1216,34 +1216,24 @@
                 this.el.setAttribute("opacity", "0");
             }
         });
-        //#######################################################
-        AFRAME.registerComponent('the_plane', {
-            // schema: {
-            //     Plane_Name: { type: "string", default: "" },
-            // },
+        //!######################################################
+        AFRAME.registerComponent('the_sky', {
             init: function () {
-                ThePlane.setAttribute("material", "src: #Dote-2; transparent: true");
-
                 this.el.addEventListener('click', function () {
-                    // the_cursor.cursor = 'pointer !important'
-                    console.log('the click on Plan');
+                    ThePlane.setAttribute("scale", "0 0 0");
                 })
-
             }
-
         });
         //!######################################################
         AFRAME.registerComponent('close_the_plane', {
-            // schema: {
-            //     Plane_Name: { type: "string", default: "" },
-            // },
+
             init: function () {
-                this.el.setAttribute('event-set__mouseenter', "scale", ".15 .15 .15")
-                this.el.setAttribute('event-set__mouseleave', "scale", ".1 .1 .1")
+                this.el.setAttribute('event-set__mouseenter', "scale", ".1 .1 .1")
+                this.el.setAttribute('event-set__mouseleave', "scale", ".08 .08 .08")
 
                 this.el.addEventListener('click', function () {
                     ThePlane.setAttribute("scale", "0 0 0");
-                    console.log('close On Plan');
+                    // console.log('close On Plan')
                 })
 
             }
